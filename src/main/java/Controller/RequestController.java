@@ -10,7 +10,14 @@ public class RequestController {
 
     @GET
     @Path ("jegyarak")
-    public Response getAllGames(){
+    public Response jegyarak(){
+
+        return Response.ok().build();
+    }
+
+    @GET
+    @Path ("korcsolyak")
+    public Response korcsolyak(){
 
         return Response.ok().build();
     }
