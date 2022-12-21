@@ -12,7 +12,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="korcsolyapalya" options="-endorseddirs D:\korcsolyapalya\target/endorsed" />
+      <module name="korcsolyapalya" options="-endorseddirs C:\Users\olive\IdeaProjects\korcsolyapalya\target/endorsed" />
     </option>
   </component>
 </project>
