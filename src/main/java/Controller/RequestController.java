@@ -22,4 +22,11 @@ public class RequestController {
         return Response.ok().build();
     }
 
+    @GET
+    @Path ("nyitvatartasok")
+    public Response getAllNyitvatartas(){
+
+        return Response.ok().build();
+    }
+
 }
