@@ -23,8 +23,8 @@ public class RequestController {
     }
 
     @GET
-    @Path ("nyitvatartasok")
-    public Response getAllNyitvatartas(){
+    @Path ("nyitvatartas")
+    public Response getNyitvatartas(){
 
         return Response.ok().build();
     }
