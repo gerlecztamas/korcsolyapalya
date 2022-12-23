@@ -18,6 +18,7 @@ public class RequestController {
         return Response.ok().build();
     }
 
+
     @GET
     @Path ("korcsolyak")
     public Response korcsolyak(){
