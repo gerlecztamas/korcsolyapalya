@@ -1,6 +1,8 @@
 package Model;
 
 
+import org.json.JSONObject;
+
 public class Korcsolya {
     private int id;
     private KorcsolyaTipusEnum tipus;
@@ -32,4 +34,15 @@ public class Korcsolya {
     public String getSzin() {
         return szin;
     }
+
+    public JSONObject toJson() {
+        JSONObject korcsolyaJSON = new JSONObject();
+        korcsolyaJSON.append("id", this.id);
+        korcsolyaJSON.append("tipus", this.tipus.toString());
+        korcsolyaJSON.append("meret", this.meret);
+        korcsolyaJSON.append("szin", this.szin);
+
+        return korcsolyaJSON;
+    }
+
 }
