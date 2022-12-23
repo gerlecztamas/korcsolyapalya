@@ -28,7 +28,7 @@ public class RequestController {
             korcsolyak.put(korcsolya1.toJson());
             korcsolyak.put(korcsolya2.toJson());
 
-        return Response.ok(korcsolyak).build();
+        return Response.ok(korcsolyak.toString()).build();
     }
 
     @GET
