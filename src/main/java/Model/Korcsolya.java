@@ -37,10 +37,10 @@ public class Korcsolya {
 
     public JSONObject toJson() {
         JSONObject korcsolyaJSON = new JSONObject();
-        korcsolyaJSON.append("id", this.id);
-        korcsolyaJSON.append("tipus", this.tipus.toString());
-        korcsolyaJSON.append("meret", this.meret);
-        korcsolyaJSON.append("szin", this.szin);
+        korcsolyaJSON.put("id", this.id);
+        korcsolyaJSON.put("tipus", this.tipus.toString());
+        korcsolyaJSON.put("meret", this.meret);
+        korcsolyaJSON.put("szin", this.szin);
 
         return korcsolyaJSON;
     }

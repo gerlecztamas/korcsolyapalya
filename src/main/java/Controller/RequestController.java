@@ -3,6 +3,7 @@ package Controller;
 import Model.Jegy;
 import Model.Korcsolya;
 import Model.KorcsolyaTipusEnum;
+import Model.RequestModel;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
@@ -50,7 +51,7 @@ public class RequestController {
     public Response kolcsonzes(String igeny) {
         JSONObject igenyJson = new JSONObject(igeny);
 
-        return Response.ok().build();
+        return Response.ok(RequestModel.kolcsonzes(igenyJson)).build();
     }
 
 
