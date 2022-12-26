@@ -7,7 +7,6 @@ public class RequestModel {
 
     public static String kolcsonzes(JSONObject igeny){
         String result = "Nincs az igényeknek megfelelő korcsolya!";
-
         //TEST LISTA, MEG KELL HOGY KAPJA JSONARRAYBEN AZ ÖSSZES KORI ADATÁT:
         JSONArray korcsolyak = new JSONArray();
         Korcsolya korcsolya1 = new Korcsolya(1, KorcsolyaTipusEnum.HockeyKorcsolya, 36, "kék");
@@ -19,8 +18,8 @@ public class RequestModel {
             JSONObject korcsolya = korcsolyak.getJSONObject(i);
             try{
                 if(korcsolya.get("meret") == igeny.get("meret") && korcsolya.getString("tipus").equals(igeny.getString("tipus"))){
-                result = korcsolya.toString();
-                return result;
+                    result = korcsolya.toString();
+                    return result;
                 }
             }
             catch(Exception e){
