@@ -35,7 +35,13 @@ public class Korcsolya implements ToJsonInterface {
         return szin;
     }
 
-
+    @Override
+    public String toString(){
+        String korcsolya = "Korcsolya típusa: " + this.tipus;
+        korcsolya += "\nMérete: " + this.meret;
+        korcsolya += "\nSzíne: " + this.szin;
+        return korcsolya;
+    }
     @Override
     public JSONObject toJson() {
         JSONObject korcsolyaJSON = new JSONObject();

@@ -18,7 +18,8 @@ public class RequestModel {
             JSONObject korcsolya = korcsolyak.getJSONObject(i);
             try{
                 if(korcsolya.get("meret") == igeny.get("meret") && korcsolya.getString("tipus").equals(igeny.getString("tipus"))){
-                    result = korcsolya.toString();
+                    Korcsolya kolcsonzott = new Korcsolya(3, KorcsolyaTipusEnum.valueOf(korcsolya.getString("tipus")), korcsolya.getInt("meret"), korcsolya.getString("szin"));
+                    result = "A következő korcsolyát sikeresen kikölcsönözte: \n"+ kolcsonzott.toString();
                     return result;
                 }
             }

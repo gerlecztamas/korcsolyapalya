@@ -22,10 +22,9 @@ public class RequestController {
             Jegy jegy1 = new Jegy("Diák", 2000);
             Jegy jegy2 = new Jegy("Nyugdíjas", 1500, "Csak 85 év felett");
             String jegyek = jegy1.toString() + "\n" + jegy2.toString();
-
+        //szerkezettől függően itt is lehet view-s megoldás majd
         return Response.ok(jegyek).build();
     }
-
 
     @GET
     @Path ("korcsolyak")
@@ -43,7 +42,7 @@ public class RequestController {
     @GET
     @Path ("nyitvatartas")
     public Response getNyitvatartas(){
-
+        //szerkezettől függően itt is lehet view-s megoldás majd
         return Response.ok().build();
     }
 
