@@ -4,6 +4,7 @@ import Model.Jegy;
 import Model.Korcsolya;
 import Model.KorcsolyaTipusEnum;
 import Model.RequestModel;
+import View.KorcsolyaView;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
@@ -36,7 +37,7 @@ public class RequestController {
             korcsolyak.put(korcsolya1.toJson());
             korcsolyak.put(korcsolya2.toJson());
 
-        return Response.ok(korcsolyak.toString()).build();
+        return Response.ok(KorcsolyaView.showKorcsolyak(korcsolyak)).build();
     }
 
     @GET
