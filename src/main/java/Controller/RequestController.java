@@ -55,5 +55,17 @@ public class RequestController {
         return Response.ok(RequestModel.kolcsonzes(igenyJson)).build();
     }
 
+    @POST
+    @Path("korcsolyaFelvetel")
+    public Response felvetel(String json){
+        JSONObject korcsolya = new JSONObject(json);
+        //ha nem szeretnénk hogy egyszerre két teljesen ugyanolyan korcsolya legyen akkor kell egy ellenőrző cucc is
+        Boolean result = RequestModel.addKorcsolya(korcsolya);
+        if(result){
+            return Response.ok("A korcsolyát hozzáadtuk az adatbázishoz!").build();
+        }
+        return Response.ok("Rossz formában adta meg a request body tartalmát vagy nem létező korcsolyatípust adott meg!").build();
+    }
+
 
 }

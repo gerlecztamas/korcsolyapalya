@@ -30,4 +30,8 @@ public class RequestModel {
         return result;
     }
 
+    public static Boolean addKorcsolya(JSONObject korcsolyaJSON){
+        //ide kerülne a típusellenőrzés és az adatbázishoz adás, ha bármi hibás false-t returnöl
+        return true;
+    }
 }
