@@ -3,7 +3,7 @@ package Model;
 
 import org.json.JSONObject;
 
-public class Korcsolya {
+public class Korcsolya implements ToJsonInterface {
     private int id;
     private KorcsolyaTipusEnum tipus;
     private int meret;
@@ -35,6 +35,8 @@ public class Korcsolya {
         return szin;
     }
 
+
+    @Override
     public JSONObject toJson() {
         JSONObject korcsolyaJSON = new JSONObject();
         korcsolyaJSON.put("id", this.id);
@@ -44,5 +46,4 @@ public class Korcsolya {
 
         return korcsolyaJSON;
     }
-
 }
