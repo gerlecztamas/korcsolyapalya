@@ -1,25 +1,24 @@
 package Model;
 
-
 import org.json.JSONObject;
 
 public class Korcsolya implements ToJsonInterface {
-    private int id;
+    private Integer id;
     private KorcsolyaTipusEnum tipus;
-    private int meret;
+    private Integer meret;
     private String szin;
 
     public Korcsolya() {
     }
 
-    public Korcsolya(int id, KorcsolyaTipusEnum tipus, int meret, String szin) {
+    public Korcsolya(Integer id, KorcsolyaTipusEnum tipus, Integer meret, String szin) {
         this.id = id;
         this.tipus = tipus;
         this.meret = meret;
         this.szin = szin;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -27,7 +26,7 @@ public class Korcsolya implements ToJsonInterface {
         return tipus;
     }
 
-    public int getMeret() {
+    public Integer getMeret() {
         return meret;
     }
 

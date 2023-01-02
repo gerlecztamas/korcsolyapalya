@@ -4,18 +4,18 @@ import org.json.JSONObject;
 
 public class Jegy implements ToJsonInterface {
     private String nev;
-    private int ar;
+    private Integer ar;
     private String megjegyzes;
 
     public Jegy() {
     }
 
-    public Jegy(String nev, int ar) {
+    public Jegy(String nev, Integer ar) {
         this.nev = nev;
         this.ar = ar;
     }
 
-    public Jegy(String nev, int ar, String megjegyzes) {
+    public Jegy(String nev, Integer ar, String megjegyzes) {
         this.nev = nev;
         this.ar = ar;
         this.megjegyzes = megjegyzes;
@@ -25,7 +25,7 @@ public class Jegy implements ToJsonInterface {
         return nev;
     }
 
-    public int getAr() {
+    public Integer getAr() {
         return ar;
     }
 
