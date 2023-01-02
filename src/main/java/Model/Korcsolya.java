@@ -1,5 +1,6 @@
 package Model;
 
+import Model.KorcsolyaTipusEnum;
 import org.json.JSONObject;
 
 public class Korcsolya implements ToJsonInterface {
