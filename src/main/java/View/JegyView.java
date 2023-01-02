@@ -21,8 +21,6 @@ public class JegyView {
     }
     public static String showJegy(JSONObject jegy){
         String jegyToString = "";
-        System.out.println(jegy);
-        System.out.println(jegy.length());
         jegyToString += "Típus: " + jegy.getString("nev") + "\n";
         jegyToString += "Ár: " + jegy.getInt("ar") + " Ft\n";
         if (jegy.length() == 3) {
