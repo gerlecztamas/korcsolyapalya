@@ -2,6 +2,7 @@ package Model;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
+import Model.XmlWriter;
 
 public class RequestModel {
 
@@ -20,6 +21,13 @@ public class RequestModel {
                 if(korcsolya.get("meret") == igeny.get("meret") && korcsolya.getString("tipus").equals(igeny.getString("tipus"))){
                     Korcsolya kolcsonzott = new Korcsolya(3, KorcsolyaTipusEnum.valueOf(korcsolya.getString("tipus")), korcsolya.getInt("meret"), korcsolya.getString("szin"));
                     result = "A következő korcsolyát sikeresen kikölcsönözte: \n"+ kolcsonzott.toString();
+
+                    //ITT JÖN A WRITER
+                    Korcsolya ujKorcsolya = new Korcsolya(korcsolya.getInt("id"),
+                            KorcsolyaTipusEnum.valueOf(korcsolya.getString("tipus")), korcsolya.getInt("meret"),
+                            korcsolya.getString("szin"));
+                    ujKorcsolya.writer();
+
                     return result;
                 }
             }
