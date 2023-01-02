@@ -10,6 +10,7 @@ import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
+import javax.xml.transform.stream.StreamSource;
 import java.io.File;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -59,10 +60,10 @@ public class XmlWriter <T>{
 
             xml.getFirstChild().appendChild(elem);
             TransformerFactory tf = TransformerFactory.newInstance();
-            Transformer t = tf.newTransformer();
+            Transformer t = tf.newTransformer(new StreamSource(new File(path)));
             t.setOutputProperty(OutputKeys.STANDALONE, "yes");
             t.setOutputProperty(OutputKeys.INDENT, "yes");
-            t.setOutputProperty("{http://xml.apache.org/xslt%7Dindent-amount", "2");
+            //t.setOutputProperty("{http://xml.apache.org/xslt%7Dindent-amount", "1");
 
 
             DOMSource s = new DOMSource(xml);

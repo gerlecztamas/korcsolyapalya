@@ -59,6 +59,7 @@ public class Korcsolya implements ToJsonInterface {
 
     public void writer(){
         XmlWriter<Korcsolya> t = new XmlWriter<Korcsolya>();
-        t.writer(this, "C:\\Users\\Adri\\IdeaProjects\\korcsolyapalya\\src\\main\\resources\\korcsolyakolcsonzes.xml");
+        t.writer(this, System.getProperty("user.dir") +
+                "\\IdeaProjects\\korcsolyapalya\\src\\main\\resources\\korcsolyak.xml");
     }
 }
