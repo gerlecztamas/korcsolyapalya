@@ -1,6 +1,7 @@
 package Controller;
 
 import Model.*;
+import View.JegyView;
 import View.KorcsolyaView;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.GET;
@@ -15,9 +16,12 @@ public class RequestController {
     @GET
     @Path ("jegyarak")
     public Response jegyarak(){
+        JSONArray jegyek = XmlReader.read(System.getProperty("user.dir") +
+                "\\IdeaProjects\\korcsolyapalya\\src\\main\\resources\\jegy.xml");
 
-        return Response.ok(XmlReader.read(System.getProperty("user.dir") +
-                "\\IdeaProjects\\korcsolyapalya\\src\\main\\resources\\jegy.xml").toString()).build();
+
+
+        return Response.ok(JegyView.showJegyek(jegyek)).build();
     }
 
 

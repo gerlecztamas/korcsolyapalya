@@ -31,14 +31,16 @@ public class XmlReader {
                 JSONObject elem = new JSONObject();
 
                 NodeList childList = el.getChildNodes();
-                if(tagNames.isEmpty()){
-                    for(int j = 0; j < childList.getLength(); j++){
-                        if(childList.item(j).hasChildNodes()){
-                            Element tag = (Element) childList.item(j);
+
+                for(int j = 0; j < childList.getLength(); j++){
+                    if(childList.item(j).hasChildNodes()){
+                        Element tag = (Element) childList.item(j);
+                        if(!tagNames.contains(tag.getTagName())) {
                             tagNames.add(tag.getTagName());
                         }
                     }
                 }
+
                 if(!tagNames.isEmpty()){
                     for(int h = 0; h < tagNames.size(); h++){
                         String tul = el.getElementsByTagName(tagNames.get(h)).item(0).getTextContent();
