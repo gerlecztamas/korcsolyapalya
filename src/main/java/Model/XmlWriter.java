@@ -62,7 +62,7 @@ public class XmlWriter <T>{
             Transformer t = tf.newTransformer();
             t.setOutputProperty(OutputKeys.STANDALONE, "yes");
             t.setOutputProperty(OutputKeys.INDENT, "yes");
-            t.setOutputProperty("{http://xml.apache.org/xslt%7Dindent-amount", "2");
+            t.setOutputProperty("{http://xml.apache.org/xslt%7Dindent-amount", "1");
 
 
             DOMSource s = new DOMSource(xml);

@@ -1,5 +1,460 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <korcsolyakolcsonzes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                                            
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <elem>
+                                                                                        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <id>1</id>
+                                                                                        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <vezeteknev>Jóska</vezeteknev>
+                                                                                        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <keresztnev>Kiss</keresztnev>
+                                                                                        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <email>kissjoska@gmail.com</email>
+                                                                                        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <korcsolyaId>15</korcsolyaId>
+                                                                                        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <datum>2023-01-13</datum>
+                                                                                    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </elem>
+                                        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <elem>
+                                                                                
+        
+        
+        
+        
+        
+        
+        
+        
+        <id>1</id>
+                                                                                
+        
+        
+        
+        
+        
+        
+        
+        
+        <vezeteknev>Jóska</vezeteknev>
+                                                                                
+        
+        
+        
+        
+        
+        
+        
+        
+        <keresztnev>Kiss</keresztnev>
+                                                                                
+        
+        
+        
+        
+        
+        
+        
+        
+        <email>kissjoska@gmail.com</email>
+                                                                                
+        
+        
+        
+        
+        
+        
+        
+        
+        <korcsolyaId>15</korcsolyaId>
+                                                                                
+        
+        
+        
+        
+        
+        
+        
+        
+        <datum>2023-01-13</datum>
+                                                                            
+    
+    
+    
+    
+    
+    
+    
+    
+    </elem>
+                                    
+    
+    
+    
+    
+    
+    
+    
+    
+    <elem>
+                                                                        
+        
+        
+        
+        
+        
+        
+        
+        <id>2</id>
+                                                                        
+        
+        
+        
+        
+        
+        
+        
+        <vezeteknev>Jóska</vezeteknev>
+                                                                        
+        
+        
+        
+        
+        
+        
+        
+        <keresztnev>Kiss</keresztnev>
+                                                                        
+        
+        
+        
+        
+        
+        
+        
+        <email>kissjoska@gmail.com</email>
+                                                                        
+        
+        
+        
+        
+        
+        
+        
+        <korcsolyaId>7</korcsolyaId>
+                                                                        
+        
+        
+        
+        
+        
+        
+        
+        <datum>2023-01-13</datum>
+                                                                    
+    
+    
+    
+    
+    
+    
+    
+    </elem>
+                                
+    
+    
+    
+    
+    
+    
+    
+    <elem>
+                                                                
+        
+        
+        
+        
+        
+        
+        <id>3</id>
+                                                                
+        
+        
+        
+        
+        
+        
+        <vezeteknev>Jóska</vezeteknev>
+                                                                
+        
+        
+        
+        
+        
+        
+        <keresztnev>Kiss</keresztnev>
+                                                                
+        
+        
+        
+        
+        
+        
+        <email>kissjoska@gmail.com</email>
+                                                                
+        
+        
+        
+        
+        
+        
+        <korcsolyaId>7</korcsolyaId>
+                                                                
+        
+        
+        
+        
+        
+        
+        <datum>2023-01-13</datum>
+                                                            
+    
+    
+    
+    
+    
+    
+    </elem>
+                            
+    
+    
+    
+    
+    
+    
+    <elem>
+                                                        
+        
+        
+        
+        
+        
+        <id>4</id>
+                                                        
+        
+        
+        
+        
+        
+        <vezeteknev>Jóska</vezeteknev>
+                                                        
+        
+        
+        
+        
+        
+        <keresztnev>Kiss</keresztnev>
+                                                        
+        
+        
+        
+        
+        
+        <email>kissjoska@gmail.com</email>
+                                                        
+        
+        
+        
+        
+        
+        <korcsolyaId>16</korcsolyaId>
+                                                        
+        
+        
+        
+        
+        
+        <datum>2023-01-13</datum>
+                                                    
+    
+    
+    
+    
+    
+    </elem>
+                        
+    
+    
+    
+    
+    
+    <elem>
+                                                
+        
+        
+        
+        
+        <id>5</id>
+                                                
+        
+        
+        
+        
+        <vezeteknev>Jóska</vezeteknev>
+                                                
+        
+        
+        
+        
+        <keresztnev>Kiss</keresztnev>
+                                                
+        
+        
+        
+        
+        <email>kissjoska@gmail.com</email>
+                                                
+        
+        
+        
+        
+        <korcsolyaId>16</korcsolyaId>
+                                                
+        
+        
+        
+        
+        <datum>2023-01-13</datum>
+                                            
+    
+    
+    
+    
+    </elem>
+                    
+    
+    
+    
+    
+    <elem>
+                                        
+        
+        
+        
+        <id>6</id>
+                                        
+        
+        
+        
+        <vezeteknev>Jóska</vezeteknev>
+                                        
+        
+        
+        
+        <keresztnev>Kiss</keresztnev>
+                                        
+        
+        
+        
+        <email>kissjoska@gmail.com</email>
+                                        
+        
+        
+        
+        <korcsolyaId>16</korcsolyaId>
+                                        
+        
+        
+        
+        <datum>2023-01-13</datum>
+                                    
+    
+    
+    
+    </elem>
                 
     
     
@@ -8,7 +463,7 @@
                                 
         
         
-        <id>1</id>
+        <id>7</id>
                                 
         
         
@@ -24,7 +479,7 @@
                                 
         
         
-        <korcsolyaId>15</korcsolyaId>
+        <korcsolyaId>16</korcsolyaId>
                                 
         
         
@@ -39,7 +494,7 @@
     <elem>
                         
         
-        <id>1</id>
+        <id>8</id>
                         
         
         <vezeteknev>Jóska</vezeteknev>
@@ -51,7 +506,7 @@
         <email>kissjoska@gmail.com</email>
                         
         
-        <korcsolyaId>15</korcsolyaId>
+        <korcsolyaId>22</korcsolyaId>
                         
         
         <datum>2023-01-13</datum>
@@ -62,7 +517,7 @@
     
     <elem>
                 
-        <id>2</id>
+        <id>9</id>
                 
         <vezeteknev>Jóska</vezeteknev>
                 
@@ -70,18 +525,18 @@
                 
         <email>kissjoska@gmail.com</email>
                 
-        <korcsolyaId>7</korcsolyaId>
+        <korcsolyaId>6</korcsolyaId>
                 
         <datum>2023-01-13</datum>
             
     </elem>
     
     <elem>
-        <id>3</id>
+        <id>10</id>
         <vezeteknev>Jóska</vezeteknev>
         <keresztnev>Kiss</keresztnev>
         <email>kissjoska@gmail.com</email>
-        <korcsolyaId>7</korcsolyaId>
-        <datum>2023-01-13</datum>
+        <korcsolyaId>6</korcsolyaId>
+        <datum>2023-01-14</datum>
     </elem>
 </korcsolyakolcsonzes>

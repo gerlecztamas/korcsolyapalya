@@ -19,44 +19,35 @@ public class RequestModel {
                 "\\IdeaProjects\\korcsolyapalya\\src\\main\\resources\\korcsolyakolcsonzes.xml");
 
         for(int i = 0; i < korcsolyak.length(); i++){
-            JSONObject korcsolya = korcsolyak.getJSONObject(i);
+            JSONObject korcsolya = korcsolyak.getJSONObject(i); //a listában lévő korcsolya az összes korcsolya közül
             try{
                 if(korcsolya.getString("meret").equals(igeny.getString("meret")) &&
                         korcsolya.getString("tipus").equals(igeny.getString("tipus"))){
 
-                    System.out.println("VAN ILYEN KORCSOLYA!");
                     //szükséges ellenőrizni hogy aznapra már ki van-e kölcsönözve!
-
                     //AZT MEG KELL JAVÍTANI AHOGY JELENLEG KIÍRJA A KORCSOLYÁT MERT ÍGY NEM TUDJA MEGNÉZNI, HOGY AZ KI VAN-E KÖLCSÖNÖZVE MÁR!!!
                     if(kolcsonzottek.length() == 0){
-
-                        System.out.println("NINCS MÉG KORCSOLYA A LISTÁBAN");
 
                         result = makeKolcsonzes(korcsolya, igeny, kolcsonzottek);
                         return result;
                     }
                     else {
-                        System.out.println("VAN MÁR KORCSOLYA A LISTÁBAN");
-
+                        Boolean szabad = true;
                         for(int j = 0; j < kolcsonzottek.length(); j++){
-
-                            System.out.println("HAHÓ");
-
-
+                            szabad = true;
                             JSONObject kolcsonzottKorcsolya = kolcsonzottek.getJSONObject(j);
 
-                            System.out.println(kolcsonzottKorcsolya.getString("korcsolyaId"));
-
                             if(kolcsonzottKorcsolya.getString("korcsolyaId").equals(korcsolya.getString("id")) &&
-                                    kolcsonzottKorcsolya.getString("datum").equals(korcsolya.getString("datum"))){
+                                    kolcsonzottKorcsolya.getString("datum").equals(igeny.getString("datum"))){
                                 System.out.println("Már ki van kölcsönözve erre az időpontra!");
                                 result = "Már minden korcsolya ezzel a paraméterrel ki van kölcsönözve az adott dátumra!";
-                            }
-                            else{
-                                result = makeKolcsonzes(korcsolya, igeny, kolcsonzottek);
-                                return result;
+                                szabad = false;
                             }
 
+                        }
+                        if(szabad){
+                            result = makeKolcsonzes(korcsolya, igeny, kolcsonzottek);
+                            return result;
                         }
 
                     }
