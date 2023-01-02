@@ -62,7 +62,7 @@ public class RequestModel {
 
 
         Kolcsonzes kolcsonzes = new Kolcsonzes(kolcsonzottek.length(), igeny.getString("keresztnev"),
-                igeny.getString("vezeteknev"), igeny.getString("email"), kolcsonzott,
+                igeny.getString("vezeteknev"), igeny.getString("email"), Integer.valueOf(korcsolya.getString("id")),
                 LocalDate.parse(igeny.getString("datum")));
         kolcsonzes.writer();
 

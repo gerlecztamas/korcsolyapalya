@@ -5,18 +5,18 @@ import java.time.LocalDate;
 public class Kolcsonzes extends Tranzakcio {
 
     @GetterFunctionName(name="getKorcsolya")
-    private Korcsolya korcsolya;
+    private Integer korcsolyaId;
     @GetterFunctionName(name="getDatum")
     private LocalDate datum;
 
-    public Kolcsonzes(int id, String vezeteknev, String keresztnev, String email, Korcsolya korcsolya, LocalDate datum) {
+    public Kolcsonzes(int id, String vezeteknev, String keresztnev, String email, Integer korcsolyaId, LocalDate datum) {
         super(id, vezeteknev, keresztnev, email);
-        this.korcsolya = korcsolya;
+        this.korcsolyaId = korcsolyaId;
         this.datum = datum;
     }
 
-    public Korcsolya getKorcsolya() {
-        return korcsolya;
+    public Integer getKorcsolya() {
+        return korcsolyaId;
     }
 
     public LocalDate getDatum() {
