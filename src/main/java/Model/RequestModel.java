@@ -6,6 +6,7 @@ import Model.XmlWriter;
 
 import java.io.File;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 
 public class RequestModel {
@@ -39,7 +40,6 @@ public class RequestModel {
 
                             if(kolcsonzottKorcsolya.getString("korcsolyaId").equals(korcsolya.getString("id")) &&
                                     kolcsonzottKorcsolya.getString("datum").equals(igeny.getString("datum"))){
-                                System.out.println("Már ki van kölcsönözve erre az időpontra!");
                                 result = "Már minden korcsolya ezzel a paraméterrel ki van kölcsönözve az adott dátumra!";
                                 szabad = false;
                             }
@@ -74,6 +74,21 @@ public class RequestModel {
                 igeny.getString("vezeteknev"), igeny.getString("email"), Integer.valueOf(korcsolya.getString("id")),
                 LocalDate.parse(igeny.getString("datum")));
         kolcsonzes.writer();
+
+        return result;
+    }
+
+    public static String foglalas(JSONObject igeny){
+        String result = "";
+
+        JSONArray foglalasok = XmlReader.read(System.getProperty("user.dir") +
+                "\\IdeaProjects\\korcsolyapalya\\src\\main\\resources\\palyafoglalas.xml");
+
+        //csak végig kell menni a létező foglalásokon és megnézni, hogy bármelyikkel egyezik-e!!!
+
+        for(int i = 0; i < foglalasok.length(); i++){
+            JSONObject foglalas = foglalasok.getJSONObject(i);
+        }
 
         return result;
     }
