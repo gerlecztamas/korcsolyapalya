@@ -24,7 +24,6 @@ public class RequestModel {
                     Korcsolya kolcsonzott = new Korcsolya(3, KorcsolyaTipusEnum.valueOf(korcsolya.getString("tipus")), korcsolya.getInt("meret"), korcsolya.getString("szin"));
                     result = "A következő korcsolyát sikeresen kikölcsönözte: \n"+ kolcsonzott.toString();
 
-                    //ITT JÖN A WRITER
                     Korcsolya ujKorcsolya = new Korcsolya(korcsolya.getInt("id"),
                             KorcsolyaTipusEnum.valueOf(korcsolya.getString("tipus")), korcsolya.getInt("meret"),
                             korcsolya.getString("szin"));

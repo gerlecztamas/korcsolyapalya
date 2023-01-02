@@ -1,23 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <korcsolyakolcsonzes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-        
-    
     <elem>
-                
-        <id>2</id>
-                
+        <id>1</id>
         <tipus>Mukorcsolya</tipus>
-                
         <meret>38</meret>
-                
         <szin>piros</szin>
-            
     </elem>
-    
     <elem>
         <id>2</id>
         <tipus>Mukorcsolya</tipus>
-        <meret>38</meret>
-        <szin>piros</szin>
+        <meret>37</meret>
+        <szin>fekete</szin>
     </elem>
 </korcsolyakolcsonzes>
