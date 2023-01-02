@@ -2,7 +2,7 @@ package Model;
 
 import org.json.JSONObject;
 
-public class Jegy {
+public class Jegy implements ToJsonInterface {
     private String nev;
     private int ar;
     private String megjegyzes;
@@ -41,5 +41,15 @@ public class Jegy {
         }
         jegy += "\nÁra: " + this.ar;
         return jegy;
+    }
+
+    @Override
+    public JSONObject toJson() {
+        JSONObject jegyJSON = new JSONObject();
+        jegyJSON.put("nev", this.nev);
+        jegyJSON.put("ar", this.ar);
+        jegyJSON.put("megjegyzes",this.megjegyzes);
+
+        return jegyJSON;
     }
 }
