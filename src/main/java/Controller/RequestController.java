@@ -4,7 +4,6 @@ import Model.Jegy;
 import Model.Korcsolya;
 import Model.KorcsolyaTipusEnum;
 import Model.RequestModel;
-import View.KorcsolyaView;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
@@ -22,9 +21,10 @@ public class RequestController {
             Jegy jegy1 = new Jegy("Diák", 2000);
             Jegy jegy2 = new Jegy("Nyugdíjas", 1500, "Csak 85 év felett");
             String jegyek = jegy1.toString() + "\n" + jegy2.toString();
-        //szerkezettől függően itt is lehet view-s megoldás majd
+
         return Response.ok(jegyek).build();
     }
+
 
     @GET
     @Path ("korcsolyak")
@@ -36,13 +36,13 @@ public class RequestController {
             korcsolyak.put(korcsolya1.toJson());
             korcsolyak.put(korcsolya2.toJson());
 
-        return Response.ok(KorcsolyaView.showKorcsolyak(korcsolyak)).build();
+        return Response.ok(korcsolyak.toString()).build();
     }
 
     @GET
     @Path ("nyitvatartas")
     public Response getNyitvatartas(){
-        //szerkezettől függően itt is lehet view-s megoldás majd
+
         return Response.ok().build();
     }
 
