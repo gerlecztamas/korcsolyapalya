@@ -1,15 +1,127 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <korcsolyakolcsonzes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    
+    
+    
+    
     <elem>
+                                        
+        
+        
+        
         <id>1</id>
+                                        
+        
+        
+        
         <tipus>Mukorcsolya</tipus>
+                                        
+        
+        
+        
         <meret>38</meret>
+                                        
+        
+        
+        
         <szin>piros</szin>
+                                    
+    
+    
+    
     </elem>
+                    
+    
+    
+    
     <elem>
+                                        
+        
+        
+        
         <id>2</id>
+                                        
+        
+        
+        
         <tipus>Mukorcsolya</tipus>
+                                        
+        
+        
+        
         <meret>37</meret>
+                                        
+        
+        
+        
         <szin>fekete</szin>
+                                    
+    
+    
+    
+    </elem>
+                
+    
+    
+    
+    <elem>
+                                
+        
+        
+        <id>1</id>
+                                
+        
+        
+        <tipus>Mukorcsolya</tipus>
+                                
+        
+        
+        <meret>38</meret>
+                                
+        
+        
+        <szin>piros</szin>
+                            
+    
+    
+    </elem>
+            
+    
+    
+    <elem>
+                        
+        
+        <id>1</id>
+                        
+        
+        <tipus>Mukorcsolya</tipus>
+                        
+        
+        <meret>38</meret>
+                        
+        
+        <szin>piros</szin>
+                    
+    
+    </elem>
+        
+    
+    <elem>
+                
+        <id>14</id>
+                
+        <tipus>Mukorcsolya</tipus>
+                
+        <meret>39</meret>
+                
+        <szin>fehér</szin>
+            
+    </elem>
+    
+    <elem>
+        <id>17</id>
+        <tipus>Mukorcsolya</tipus>
+        <meret>40</meret>
+        <szin>kék</szin>
     </elem>
 </korcsolyakolcsonzes>
