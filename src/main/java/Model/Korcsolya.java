@@ -3,9 +3,13 @@ package Model;
 import org.json.JSONObject;
 
 public class Korcsolya implements ToJsonInterface {
+    @GetterFunctionName(name="getId")
     private Integer id;
+    @GetterFunctionName(name="getTipus")
     private KorcsolyaTipusEnum tipus;
+    @GetterFunctionName(name="getMeret")
     private Integer meret;
+    @GetterFunctionName(name="getSzin")
     private String szin;
 
     public Korcsolya() {
@@ -50,5 +54,10 @@ public class Korcsolya implements ToJsonInterface {
         korcsolyaJSON.put("szin", this.szin);
 
         return korcsolyaJSON;
+    }
+
+    public void writer(){
+        XmlWriter<Korcsolya> t = new XmlWriter<Korcsolya>();
+        t.writer(this, "C:\\Users\\Adri\\IdeaProjects\\korcsolyapalya\\src\\main\\resources\\korcsolyakolcsonzes.xml");
     }
 }
