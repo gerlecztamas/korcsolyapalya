@@ -1,9 +1,7 @@
 package Controller;
 
-import Model.Jegy;
-import Model.Korcsolya;
-import Model.KorcsolyaTipusEnum;
-import Model.RequestModel;
+import Model.*;
+import View.KorcsolyaView;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
@@ -18,32 +16,27 @@ public class RequestController {
     @Path ("jegyarak")
     public Response jegyarak(){
 
-            Jegy jegy1 = new Jegy("Diák", 2000);
-            Jegy jegy2 = new Jegy("Nyugdíjas", 1500, "Csak 85 év felett");
-            String jegyek = jegy1.toString() + "\n" + jegy2.toString();
-
-        return Response.ok(jegyek).build();
+        return Response.ok(XmlReader.read(System.getProperty("user.dir") +
+                "\\IdeaProjects\\korcsolyapalya\\src\\main\\resources\\jegy.xml").toString()).build();
     }
 
 
     @GET
     @Path ("korcsolyak")
     public Response korcsolyak(){
+        JSONArray korcsolyak = XmlReader.read(System.getProperty("user.dir") +
+                "\\IdeaProjects\\korcsolyapalya\\src\\main\\resources\\korcsolyak.xml");
 
-            JSONArray korcsolyak = new JSONArray();
-            Korcsolya korcsolya1 = new Korcsolya(1, KorcsolyaTipusEnum.HockeyKorcsolya, 36, "kék");
-            Korcsolya korcsolya2 = new Korcsolya(2, KorcsolyaTipusEnum.Mukorcsolya, 38, "piros");
-            korcsolyak.put(korcsolya1.toJson());
-            korcsolyak.put(korcsolya2.toJson());
-
-        return Response.ok(korcsolyak.toString()).build();
+        return Response.ok(KorcsolyaView.showKorcsolyak(korcsolyak)).build();
     }
 
     @GET
     @Path ("nyitvatartas")
     public Response getNyitvatartas(){
+        JSONArray korcsolyak = XmlReader.read(System.getProperty("user.dir") +
+                "\\IdeaProjects\\korcsolyapalya\\src\\main\\resources\\korcsolyak.xml");
 
-        return Response.ok().build();
+        return Response.ok(korcsolyak.toString()).build();
     }
 
     @POST

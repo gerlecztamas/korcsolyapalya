@@ -1,127 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <korcsolyakolcsonzes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-                    
-    
-    
     
     <elem>
-                                        
-        
-        
-        
-        <id>1</id>
-                                        
-        
-        
-        
-        <tipus>Mukorcsolya</tipus>
-                                        
-        
-        
-        
-        <meret>38</meret>
-                                        
-        
-        
-        
-        <szin>piros</szin>
-                                    
-    
-    
-    
-    </elem>
-                    
-    
-    
-    
-    <elem>
-                                        
-        
-        
-        
-        <id>2</id>
-                                        
-        
-        
-        
-        <tipus>Mukorcsolya</tipus>
-                                        
-        
-        
-        
-        <meret>37</meret>
-                                        
-        
-        
-        
-        <szin>fekete</szin>
-                                    
-    
-    
-    
-    </elem>
-                
-    
-    
-    
-    <elem>
-                                
-        
-        
-        <id>1</id>
-                                
-        
-        
-        <tipus>Mukorcsolya</tipus>
-                                
-        
-        
-        <meret>38</meret>
-                                
-        
-        
-        <szin>piros</szin>
-                            
-    
-    
-    </elem>
-            
-    
-    
-    <elem>
-                        
-        
-        <id>1</id>
-                        
-        
-        <tipus>Mukorcsolya</tipus>
-                        
-        
-        <meret>38</meret>
-                        
-        
-        <szin>piros</szin>
-                    
-    
-    </elem>
-        
-    
-    <elem>
-                
-        <id>14</id>
-                
-        <tipus>Mukorcsolya</tipus>
-                
-        <meret>39</meret>
-                
-        <szin>fehér</szin>
-            
-    </elem>
-    
-    <elem>
-        <id>17</id>
-        <tipus>Mukorcsolya</tipus>
-        <meret>40</meret>
-        <szin>kék</szin>
+        <id>0</id>
+        <vezeteknev>Jóska</vezeteknev>
+        <keresztnev>Kiss</keresztnev>
+        <email>kissjoska@gmail.com</email>
+        <korcsolya>Korcsolya típusa: HockeyKorcsolya
+Mérete: 42
+Színe: zöld</korcsolya>
+        <datum>2023-01-13</datum>
     </elem>
 </korcsolyakolcsonzes>
