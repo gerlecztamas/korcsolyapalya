@@ -23,29 +23,47 @@ public class RequestModel {
             try{
                 if(korcsolya.getString("meret").equals(igeny.getString("meret")) &&
                         korcsolya.getString("tipus").equals(igeny.getString("tipus"))){
+
+                    System.out.println("VAN ILYEN KORCSOLYA!");
                     //szükséges ellenőrizni hogy aznapra már ki van-e kölcsönözve!
 
                     //AZT MEG KELL JAVÍTANI AHOGY JELENLEG KIÍRJA A KORCSOLYÁT MERT ÍGY NEM TUDJA MEGNÉZNI, HOGY AZ KI VAN-E KÖLCSÖNÖZVE MÁR!!!
                     if(kolcsonzottek.length() == 0){
+
+                        System.out.println("NINCS MÉG KORCSOLYA A LISTÁBAN");
+
                         result = makeKolcsonzes(korcsolya, igeny, kolcsonzottek);
                         return result;
                     }
                     else {
+                        System.out.println("VAN MÁR KORCSOLYA A LISTÁBAN");
+
                         for(int j = 0; j < kolcsonzottek.length(); j++){
+
+                            System.out.println("HAHÓ");
+
+
                             JSONObject kolcsonzottKorcsolya = kolcsonzottek.getJSONObject(j);
-                            if(kolcsonzottKorcsolya.getString("id").equals(korcsolya.getString("id")) &&
+
+                            System.out.println(kolcsonzottKorcsolya.getString("korcsolyaId"));
+
+                            if(kolcsonzottKorcsolya.getString("korcsolyaId").equals(korcsolya.getString("id")) &&
                                     kolcsonzottKorcsolya.getString("datum").equals(korcsolya.getString("datum"))){
                                 System.out.println("Már ki van kölcsönözve erre az időpontra!");
+                                result = "Már minden korcsolya ezzel a paraméterrel ki van kölcsönözve az adott dátumra!";
                             }
                             else{
                                 result = makeKolcsonzes(korcsolya, igeny, kolcsonzottek);
                                 return result;
                             }
+
                         }
+
                     }
                 }
             }
             catch(Exception e){
+                System.out.println(e.getMessage());
                 result = "Hibás bemenő paraméterek!";
                 return result;
             }

@@ -1,10 +1,68 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <korcsolyakolcsonzes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                
+    
+    
+    
+    <elem>
+                                
+        
+        
+        <id>1</id>
+                                
+        
+        
+        <vezeteknev>Jóska</vezeteknev>
+                                
+        
+        
+        <keresztnev>Kiss</keresztnev>
+                                
+        
+        
+        <email>kissjoska@gmail.com</email>
+                                
+        
+        
+        <korcsolyaId>15</korcsolyaId>
+                                
+        
+        
+        <datum>2023-01-13</datum>
+                            
+    
+    
+    </elem>
+            
+    
+    
+    <elem>
+                        
+        
+        <id>1</id>
+                        
+        
+        <vezeteknev>Jóska</vezeteknev>
+                        
+        
+        <keresztnev>Kiss</keresztnev>
+                        
+        
+        <email>kissjoska@gmail.com</email>
+                        
+        
+        <korcsolyaId>15</korcsolyaId>
+                        
+        
+        <datum>2023-01-13</datum>
+                    
+    
+    </elem>
         
     
     <elem>
                 
-        <id>1</id>
+        <id>2</id>
                 
         <vezeteknev>Jóska</vezeteknev>
                 
@@ -12,18 +70,18 @@
                 
         <email>kissjoska@gmail.com</email>
                 
-        <korcsolyaId>15</korcsolyaId>
+        <korcsolyaId>7</korcsolyaId>
                 
         <datum>2023-01-13</datum>
             
     </elem>
     
     <elem>
-        <id>1</id>
+        <id>3</id>
         <vezeteknev>Jóska</vezeteknev>
         <keresztnev>Kiss</keresztnev>
         <email>kissjoska@gmail.com</email>
-        <korcsolyaId>15</korcsolyaId>
+        <korcsolyaId>7</korcsolyaId>
         <datum>2023-01-13</datum>
     </elem>
 </korcsolyakolcsonzes>
