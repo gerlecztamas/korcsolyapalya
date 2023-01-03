@@ -6,7 +6,7 @@ import org.json.JSONObject;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-public class Kolcsonzes extends Tranzakcio {
+public class Kolcsonzes extends Tranzakcio implements WriterInterface{
 
     @GetterFunctionName(name="getKorcsolya")
     private Integer korcsolyaId;
@@ -27,12 +27,6 @@ public class Kolcsonzes extends Tranzakcio {
         return datum;
     }
 
-    public void writer(){
-        XmlWriter<Kolcsonzes> t = new XmlWriter<Kolcsonzes>();
-        t.writer(this, System.getProperty("user.dir") +
-                "\\IdeaProjects\\korcsolyapalya\\src\\main\\resources\\korcsolyakolcsonzes.xml");
-    }
-
     @Override
     public String toString(){
         DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("yyyy.MM.dd.");
@@ -50,5 +44,12 @@ public class Kolcsonzes extends Tranzakcio {
             }
         }
         return kolcsonzes;
+    }
+
+    @Override
+    public void writer() {
+        XmlWriter<Kolcsonzes> t = new XmlWriter<Kolcsonzes>();
+        t.writer(this, System.getProperty("user.dir") +
+                "\\IdeaProjects\\korcsolyapalya\\src\\main\\resources\\korcsolyakolcsonzes.xml");
     }
 }

@@ -5,7 +5,7 @@ import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
 
-public class Foglalas extends Tranzakcio {
+public class Foglalas extends Tranzakcio implements WriterInterface{
 
     @GetterFunctionName(name="getDatum")
     private final LocalDate datum;
@@ -33,11 +33,7 @@ public class Foglalas extends Tranzakcio {
         return veg;
     }
 
-    public void writer(){
-        XmlWriter<Foglalas> t = new XmlWriter<>();
-        t.writer(this, System.getProperty("user.dir") +
-                "\\IdeaProjects\\korcsolyapalya\\src\\main\\resources\\palyafoglalas.xml");
-    }
+
 
     @Override
     public String toString(){
@@ -47,5 +43,12 @@ public class Foglalas extends Tranzakcio {
         foglalas += this.veg + "-ig ";
         foglalas += this.getVezeteknev() + " " + this.getKeresztnev() + " néven";
         return foglalas;
+    }
+
+    @Override
+    public void writer() {
+        XmlWriter<Foglalas> t = new XmlWriter<>();
+        t.writer(this, System.getProperty("user.dir") +
+                "\\IdeaProjects\\korcsolyapalya\\src\\main\\resources\\palyafoglalas.xml");
     }
 }
