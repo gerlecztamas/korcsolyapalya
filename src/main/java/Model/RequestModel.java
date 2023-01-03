@@ -148,4 +148,54 @@ public class RequestModel {
         return true;
     }
 
+    public static String getKolcsonzesek(){
+        String result = "";
+        JSONArray kolcsonzesek = XmlReader.read(System.getProperty("user.dir") +
+                "\\IdeaProjects\\korcsolyapalya\\src\\main\\resources\\korcsolyakolcsonzes.xml");
+
+        for(int i = 0; i < kolcsonzesek.length(); i++){
+            JSONObject kolcson = kolcsonzesek.getJSONObject(i);
+            Kolcsonzes kolcsonzes = new Kolcsonzes(Integer.valueOf(kolcson.getString("id")), kolcson.getString("keresztnev"),
+                    kolcson.getString("vezeteknev"), kolcson.getString("email"),
+                    Integer.valueOf(kolcson.getString("korcsolyaId")), LocalDate.parse(kolcson.getString("datum")));
+
+
+            if(kolcsonzes.getDatum().isAfter(LocalDate.now().minusDays(1))){
+                result += kolcsonzes.toString() + "\n";
+            }
+        }
+
+        if(result.equals("")){
+            return "Nincsenek aktív kölcsönzések!";
+        }
+        else{
+            return "Az alábbi aktív kölcsönzések vannak a rendszerben:\n\n" + result;
+        }
+    }
+
+    public static String getFoglalasok(){
+        String result = "";
+        JSONArray foglalasok = XmlReader.read(System.getProperty("user.dir") +
+                "\\IdeaProjects\\korcsolyapalya\\src\\main\\resources\\palyafoglalas.xml");
+
+        for(int i = 0; i < foglalasok.length(); i++){
+            JSONObject fogl = foglalasok.getJSONObject(i);
+            Foglalas foglalas = new Foglalas(Integer.valueOf(fogl.getString("id")), fogl.getString("vezeteknev"),
+                    fogl.getString("keresztnev"), fogl.getString("email"), LocalDate.parse(fogl.getString("datum")),
+                    LocalTime.parse(fogl.getString("kezdet")), LocalTime.parse(fogl.getString("veg")));
+
+
+            if(foglalas.getDatum().isAfter(LocalDate.now().minusDays(1))){
+                result += foglalas.toString() + "\n";
+            }
+        }
+
+        if(result.equals("")){
+            return "Nincsenek aktív pályafoglalások!";
+        }
+        else{
+            return "Az alábbi aktív pályafoglalások vannak a rendszerben:\n\n" + result;
+        }
+    }
+
 }

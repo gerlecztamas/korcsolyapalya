@@ -36,4 +36,13 @@
         <kezdet>14:00</kezdet>
         <veg>15:00</veg>
     </elem>
+    <elem>
+        <id>4</id>
+        <vezeteknev>Kiss</vezeteknev>
+        <keresztnev>Jóska</keresztnev>
+        <email>kissjoska@gmail.com</email>
+        <datum>2023-01-15</datum>
+        <kezdet>16:00</kezdet>
+        <veg>17:00</veg>
+    </elem>
 </palyafoglalas>

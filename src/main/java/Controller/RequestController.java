@@ -13,14 +13,15 @@ import org.json.JSONObject;
 
 @Path("application")
 public class RequestController {
+
     @GET
     @Path ("jegyarak")
     public Response jegyarak(){
+
         JSONArray jegyek = XmlReader.read(System.getProperty("user.dir") +
                 "\\IdeaProjects\\korcsolyapalya\\src\\main\\resources\\jegy.xml");
         return Response.ok(JegyView.showJegyek(jegyek)).build();
     }
-
 
     @GET
     @Path ("korcsolyak")
@@ -34,10 +35,24 @@ public class RequestController {
     @GET
     @Path ("nyitvatartas")
     public Response getNyitvatartas(){
-        JSONArray nyitvatartasok = XmlReader.read(System.getProperty("user.dir") +
+        JSONArray nyitvatartas = XmlReader.read(System.getProperty("user.dir") +
                 "\\IdeaProjects\\korcsolyapalya\\src\\main\\resources\\nyitvatartas.xml");
 
-        return Response.ok(NyitvatartasView.showNyitvatartasok(nyitvatartasok)).build();
+        return Response.ok(NyitvatartasView.showNyitvatartasok(nyitvatartas)).build();
+    }
+
+    @GET
+    @Path ("kolcsonzesek")
+    public Response getKolcsonzesek(){
+
+        return Response.ok(RequestModel.getKolcsonzesek()).build();
+    }
+
+    @GET
+    @Path ("foglalasok")
+    public Response getFoglalasok(){
+
+        return Response.ok(RequestModel.getFoglalasok()).build();
     }
 
     @POST
@@ -58,7 +73,6 @@ public class RequestController {
         }
         return Response.ok("Rossz formában adta meg a request body tartalmát vagy nem létező korcsolyatípust adott meg!").build();
     }
-
     @POST
     @Path("palyaFoglalas")
     public Response foglalas(String igeny) {
