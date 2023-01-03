@@ -1,7 +1,5 @@
 package Model;
 
-import java.time.LocalDateTime;
-
 public class Tranzakcio {
     @GetterFunctionName(name="getId")
     private int id;

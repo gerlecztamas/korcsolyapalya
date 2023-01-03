@@ -5,7 +5,7 @@ public enum KorcsolyaTipusEnum {
 
     public final int id;
 
-    private KorcsolyaTipusEnum (int id){
+    KorcsolyaTipusEnum (int id){
         this.id = id;
     }
     public int getId() {

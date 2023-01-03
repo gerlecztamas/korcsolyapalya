@@ -41,7 +41,7 @@ public class RequestController {
     @Path ("nyitvatartas")
     public Response getNyitvatartas(){
         JSONArray korcsolyak = XmlReader.read(System.getProperty("user.dir") +
-                "\\IdeaProjects\\korcsolyapalya\\src\\main\\resources\\korcsolyak.xml");
+                "\\IdeaProjects\\korcsolyapalya\\src\\main\\resources\\nyitvatartas.xml");
 
         return Response.ok(korcsolyak.toString()).build();
     }
@@ -65,5 +65,12 @@ public class RequestController {
         return Response.ok("Rossz formában adta meg a request body tartalmát vagy nem létező korcsolyatípust adott meg!").build();
     }
 
+    @Path("palyaFoglalas")
+    public Response foglalas(String igeny) {
+        JSONObject igenyJson = new JSONObject(igeny);
+
+
+        return Response.ok(RequestModel.foglalas(igenyJson)).build();
+    }
 
 }

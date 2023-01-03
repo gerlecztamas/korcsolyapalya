@@ -42,9 +42,9 @@ public class XmlReader {
                 }
 
                 if(!tagNames.isEmpty()){
-                    for(int h = 0; h < tagNames.size(); h++){
-                        String tul = el.getElementsByTagName(tagNames.get(h)).item(0).getTextContent();
-                        elem.put(tagNames.get(h), tul);
+                    for (String tagName : tagNames) {
+                        String tul = el.getElementsByTagName(tagName).item(0).getTextContent();
+                        elem.put(tagName, tul);
                     }
                     elemek.put(elem);
                 }
