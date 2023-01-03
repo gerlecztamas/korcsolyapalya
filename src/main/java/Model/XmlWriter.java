@@ -60,7 +60,8 @@ public class XmlWriter <T>{
 
             xml.getFirstChild().appendChild(elem);
             TransformerFactory tf = TransformerFactory.newInstance();
-            Transformer t = tf.newTransformer(new StreamSource(new File(path)));
+            Transformer t = tf.newTransformer(new StreamSource(new File(System.getProperty("user.dir") +
+                    "\\IdeaProjects\\korcsolyapalya\\src\\main\\resources\\prettyprint.xsl")));
             t.setOutputProperty(OutputKeys.STANDALONE, "yes");
             t.setOutputProperty(OutputKeys.INDENT, "yes");
             //t.setOutputProperty("{http://xml.apache.org/xslt%7Dindent-amount", "1");
