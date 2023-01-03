@@ -3,6 +3,7 @@ package Controller;
 import Model.*;
 import View.JegyView;
 import View.KorcsolyaView;
+import View.NyitvatartasView;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
@@ -34,10 +35,10 @@ public class RequestController {
     @GET
     @Path ("nyitvatartas")
     public Response getNyitvatartas(){
-        JSONArray korcsolyak = XmlReader.read(System.getProperty("user.dir") +
+        JSONArray nyitvatartasok = XmlReader.read(System.getProperty("user.dir") +
                 "\\IdeaProjects\\korcsolyapalya\\src\\main\\resources\\nyitvatartas.xml");
 
-        return Response.ok(korcsolyak.toString()).build();
+        return Response.ok(NyitvatartasView.showNyitvatartasok(nyitvatartasok)).build();
     }
 
     @POST
