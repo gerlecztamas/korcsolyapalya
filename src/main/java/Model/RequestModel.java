@@ -3,6 +3,7 @@ package Model;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.time.LocalTime;
 
 
@@ -119,6 +120,32 @@ public class RequestModel {
         result = "Sikeres foglalás!"; //IDE KÉNE EGY SZEBB KIIRATÁS TOMI!!!!
 
         return result;
+    }
+
+
+    public static Boolean addKorcsolya(JSONObject korcsolya){
+        try {
+            JSONArray korcsolyak = XmlReader.read(System.getProperty("user.dir") +
+                    "\\IdeaProjects\\korcsolyapalya\\src\\main\\resources\\korcsolyak.xml");
+            String tipus = korcsolya.getString("tipus");
+            ArrayList<String> tipusLista = new ArrayList<String>();
+            for (KorcsolyaTipusEnum tipusEnum : KorcsolyaTipusEnum.values()) {
+                String tipusString = tipusEnum.name();
+                tipusLista.add(tipusString);
+                System.out.println(tipusString.getClass().getName() + "hahooo" + tipusString);
+            }
+            if (!tipusLista.contains(tipus)) {
+                return false;
+            }
+            Korcsolya ujKorcsolya = new Korcsolya(korcsolyak.length(), KorcsolyaTipusEnum.valueOf(korcsolya.getString("tipus")), korcsolya.getInt("meret"), korcsolya.getString("szin"));
+            ujKorcsolya.writer();
+        }
+        catch (Exception ex){
+            System.out.println(ex.getMessage());
+            return false;
+        }
+
+        return true;
     }
 
 }

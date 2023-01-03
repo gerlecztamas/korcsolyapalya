@@ -1,6 +1,7 @@
 package Controller;
 
 import Model.*;
+import View.JegyView;
 import View.KorcsolyaView;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.GET;
@@ -15,9 +16,15 @@ public class RequestController {
     @GET
     @Path ("jegyarak")
     public Response jegyarak(){
+        /*JSONArray jegyek = XmlReader.read(System.getProperty("user.dir") +
+                "\\IdeaProjects\\korcsolyapalya\\src\\main\\resources\\jegy.xml");*/
 
-        return Response.ok(XmlReader.read(System.getProperty("user.dir") +
-                "\\IdeaProjects\\korcsolyapalya\\src\\main\\resources\\jegy.xml").toString()).build();
+        JSONArray jegyek = XmlReader.read("C:\\Users\\yatom\\IdeaProjects\\korcsolyapalya\\src\\main\\resources\\jegy.xml");
+        for (KorcsolyaTipusEnum s : KorcsolyaTipusEnum.values()) {
+            String b = s.name();
+            System.out.println(b + "a" + b.getClass().getName());
+        }
+        return Response.ok(JegyView.showJegyek(jegyek)).build();
     }
 
 
@@ -48,9 +55,20 @@ public class RequestController {
     }
 
     @POST
+    @Path("korcsolyaFelvetel")
+    public Response felvetel(String json){
+        JSONObject korcsolya = new JSONObject(json);
+        Boolean result = RequestModel.addKorcsolya(korcsolya);
+        if(result){
+            return Response.ok("A korcsolyát hozzáadtuk az adatbázishoz!").build();
+        }
+        return Response.ok("Rossz formában adta meg a request body tartalmát vagy nem létező korcsolyatípust adott meg!").build();
+    }
+
     @Path("palyaFoglalas")
     public Response foglalas(String igeny) {
         JSONObject igenyJson = new JSONObject(igeny);
+
 
         return Response.ok(RequestModel.foglalas(igenyJson)).build();
     }
