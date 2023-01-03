@@ -1,11 +1,13 @@
 package Model;
 
-import java.time.LocalDateTime;
-
 public class Tranzakcio {
+    @GetterFunctionName(name="getId")
     private int id;
+    @GetterFunctionName(name="getVezeteknev")
     private String vezeteknev;
+    @GetterFunctionName(name="getKeresztnev")
     private String keresztnev;
+    @GetterFunctionName(name="getEmail")
     private String email;
 
 

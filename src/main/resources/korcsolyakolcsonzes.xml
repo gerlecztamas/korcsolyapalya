@@ -1,15 +1,35 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <korcsolyakolcsonzes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <elem>
+        <id>0</id>
+        <vezeteknev>Jóska</vezeteknev>
+        <keresztnev>Kiss</keresztnev>
+        <email>kissjoska@gmail.com</email>
+        <korcsolyaId>14</korcsolyaId>
+        <datum>2023-01-14</datum>
+    </elem>
+    <elem>
         <id>1</id>
-        <tipus>Mukorcsolya</tipus>
-        <meret>38</meret>
-        <szin>piros</szin>
+        <vezeteknev>Jóska</vezeteknev>
+        <keresztnev>Kiss</keresztnev>
+        <email>kissjoska@gmail.com</email>
+        <korcsolyaId>21</korcsolyaId>
+        <datum>2023-01-14</datum>
     </elem>
     <elem>
         <id>2</id>
-        <tipus>Mukorcsolya</tipus>
-        <meret>37</meret>
-        <szin>fekete</szin>
+        <vezeteknev>Jóska</vezeteknev>
+        <keresztnev>Kiss</keresztnev>
+        <email>kissjoska@gmail.com</email>
+        <korcsolyaId>1</korcsolyaId>
+        <datum>2023-01-14</datum>
+    </elem>
+    <elem>
+        <id>3</id>
+        <vezeteknev>Jóska</vezeteknev>
+        <keresztnev>Kiss</keresztnev>
+        <email>kissjoska@gmail.com</email>
+        <korcsolyaId>13</korcsolyaId>
+        <datum>2023-01-14</datum>
     </elem>
 </korcsolyakolcsonzes>
