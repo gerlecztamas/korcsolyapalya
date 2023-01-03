@@ -116,7 +116,7 @@ public class RequestModel {
                 LocalTime.parse(igeny.getString("veg")));
         foglalas.writer();
 
-        result = "Sikeresen lefoglalta a pályát " + foglalas; //IDE KÉNE EGY SZEBB KIIRATÁS TOMI!!!!
+        result = "Sikeresen lefoglalta a pályát " + foglalas + "!\n"; //IDE KÉNE EGY SZEBB KIIRATÁS TOMI!!!!
 
         return result;
     }

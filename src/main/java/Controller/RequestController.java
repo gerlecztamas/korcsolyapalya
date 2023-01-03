@@ -13,7 +13,6 @@ import org.json.JSONObject;
 
 @Path("application")
 public class RequestController {
-
     @GET
     @Path ("jegyarak")
     public Response jegyarak(){

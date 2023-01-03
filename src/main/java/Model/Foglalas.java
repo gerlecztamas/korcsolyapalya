@@ -45,7 +45,7 @@ public class Foglalas extends Tranzakcio {
         String foglalas = FORMATTER.format(this.datum) + "-én/-án, ";
         foglalas += this.kezdet + "-tól/-től ";
         foglalas += this.veg + "-ig ";
-        foglalas += this.getVezeteknev() + " " + this.getKeresztnev() + " néven!\n";
+        foglalas += this.getVezeteknev() + " " + this.getKeresztnev() + " néven";
         return foglalas;
     }
 }
