@@ -8,11 +8,11 @@ import java.time.format.DateTimeFormatter;
 public class Foglalas extends Tranzakcio {
 
     @GetterFunctionName(name="getDatum")
-    private LocalDate datum;
+    private final LocalDate datum;
     @GetterFunctionName(name="getKezdet")
-    private LocalTime kezdet;
+    private final LocalTime kezdet;
     @GetterFunctionName(name="getVeg")
-    private LocalTime veg;
+    private final LocalTime veg;
 
     public Foglalas(int id, String vezeteknev, String keresztnev, String email, LocalDate datum, LocalTime kezdet, LocalTime veg) {
         super(id, vezeteknev, keresztnev, email);

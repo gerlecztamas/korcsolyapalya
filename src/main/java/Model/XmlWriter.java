@@ -29,33 +29,8 @@ public class XmlWriter <T>{
 
             Element elem = xml.createElement("elem");
 
-            Field[] osTulajdonsagok = superclazz.getDeclaredFields();
-            for (Field tulajdonsag : osTulajdonsagok) {
-                if(tulajdonsag.getAnnotation(GetterFunctionName.class) != null){
-                    String gfn = tulajdonsag.getAnnotation(GetterFunctionName.class).name();
-                    Method gm = clazz.getMethod(gfn);
-                    String ertek = gm.invoke(entity).toString();
-                    String valtozoNev = tulajdonsag.getName();
-
-                    Element elemek = xml.createElement(valtozoNev);
-                    elemek.setTextContent(ertek);
-                    elem.appendChild(elemek);
-                }
-            }
-
-            Field[] tulajdonsagok = clazz.getDeclaredFields();
-            for(Field tulajdonsag: tulajdonsagok) {
-                if(tulajdonsag.getAnnotation(GetterFunctionName.class) != null){
-                    String gfn = tulajdonsag.getAnnotation(GetterFunctionName.class).name();
-                    Method gm = clazz.getMethod(gfn);
-                    String ertek = gm.invoke(entity).toString();
-                    String valtozoNev = tulajdonsag.getName();
-
-                    Element elemek = xml.createElement(valtozoNev);
-                    elemek.setTextContent(ertek);
-                    elem.appendChild(elemek);
-                }
-            }
+            writeAttributes(clazz, entity, xml, elem);
+            writeAttributes(superclazz, entity, xml, elem);
 
             xml.getFirstChild().appendChild(elem);
             TransformerFactory tf = TransformerFactory.newInstance();

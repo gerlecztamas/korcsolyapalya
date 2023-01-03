@@ -3,7 +3,6 @@ package Controller;
 import Model.*;
 import View.JegyView;
 import View.KorcsolyaView;
-import View.NyitvatartasView;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
@@ -13,14 +12,15 @@ import org.json.JSONObject;
 
 @Path("application")
 public class RequestController {
+
     @GET
     @Path ("jegyarak")
     public Response jegyarak(){
+
         JSONArray jegyek = XmlReader.read(System.getProperty("user.dir") +
                 "\\IdeaProjects\\korcsolyapalya\\src\\main\\resources\\jegy.xml");
         return Response.ok(JegyView.showJegyek(jegyek)).build();
     }
-
 
     @GET
     @Path ("korcsolyak")
@@ -34,10 +34,17 @@ public class RequestController {
     @GET
     @Path ("nyitvatartas")
     public Response getNyitvatartas(){
-        JSONArray nyitvatartasok = XmlReader.read(System.getProperty("user.dir") +
+        JSONArray korcsolyak = XmlReader.read(System.getProperty("user.dir") +
                 "\\IdeaProjects\\korcsolyapalya\\src\\main\\resources\\nyitvatartas.xml");
 
-        return Response.ok(NyitvatartasView.showNyitvatartasok(nyitvatartasok)).build();
+        return Response.ok(korcsolyak.toString()).build();
+    }
+
+    @GET
+    @Path ("kolcsonzesek")
+    public Response getKolcsonzesek(){
+
+        return Response.ok(RequestModel.getKolcsonzesek()).build();
     }
 
     @POST
@@ -58,7 +65,6 @@ public class RequestController {
         }
         return Response.ok("Rossz formában adta meg a request body tartalmát vagy nem létező korcsolyatípust adott meg!").build();
     }
-
     @POST
     @Path("palyaFoglalas")
     public Response foglalas(String igeny) {

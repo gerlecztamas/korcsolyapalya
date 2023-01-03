@@ -13,9 +13,6 @@ public class Korcsolya implements ToJsonInterface {
     @GetterFunctionName(name="getSzin")
     private String szin;
 
-    public Korcsolya() {
-    }
-
     public Korcsolya(Integer id, KorcsolyaTipusEnum tipus, Integer meret, String szin) {
         this.id = id;
         this.tipus = tipus;

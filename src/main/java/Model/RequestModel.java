@@ -148,4 +148,29 @@ public class RequestModel {
         return true;
     }
 
+    public static String getKolcsonzesek(){
+        String result = "";
+        JSONArray kolcsonzesek = XmlReader.read(System.getProperty("user.dir") +
+                "\\IdeaProjects\\korcsolyapalya\\src\\main\\resources\\korcsolyakolcsonzes.xml");
+
+        for(int i = 0; i < kolcsonzesek.length(); i++){
+            JSONObject kolcson = kolcsonzesek.getJSONObject(i);
+            Kolcsonzes kolcsonzes = new Kolcsonzes(Integer.valueOf(kolcson.getString("id")), kolcson.getString("keresztnev"),
+                    kolcson.getString("vezeteknev"), kolcson.getString("email"),
+                    Integer.valueOf(kolcson.getString("korcsolyaId")), LocalDate.parse(kolcson.getString("datum")));
+
+
+            if(kolcsonzes.getDatum().isAfter(LocalDate.now().minusDays(1))){
+                result += kolcsonzes.toString() + "\n";
+            }
+        }
+
+        if(result.equals("")){
+            return "Nincsenek aktív kölcsönzések!";
+        }
+        else{
+            return "Az alábbi aktív kölcsönzések vannak a rendszerben:\n\n" + result;
+        }
+    }
+
 }
