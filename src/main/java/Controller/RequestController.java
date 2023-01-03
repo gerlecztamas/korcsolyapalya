@@ -3,6 +3,7 @@ package Controller;
 import Model.*;
 import View.JegyView;
 import View.KorcsolyaView;
+import View.NyitvatartasView;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
@@ -12,18 +13,11 @@ import org.json.JSONObject;
 
 @Path("application")
 public class RequestController {
-
     @GET
     @Path ("jegyarak")
     public Response jegyarak(){
-        /*JSONArray jegyek = XmlReader.read(System.getProperty("user.dir") +
-                "\\IdeaProjects\\korcsolyapalya\\src\\main\\resources\\jegy.xml");*/
-
-        JSONArray jegyek = XmlReader.read("C:\\Users\\yatom\\IdeaProjects\\korcsolyapalya\\src\\main\\resources\\jegy.xml");
-        for (KorcsolyaTipusEnum s : KorcsolyaTipusEnum.values()) {
-            String b = s.name();
-            System.out.println(b + "a" + b.getClass().getName());
-        }
+        JSONArray jegyek = XmlReader.read(System.getProperty("user.dir") +
+                "\\IdeaProjects\\korcsolyapalya\\src\\main\\resources\\jegy.xml");
         return Response.ok(JegyView.showJegyek(jegyek)).build();
     }
 
@@ -40,10 +34,10 @@ public class RequestController {
     @GET
     @Path ("nyitvatartas")
     public Response getNyitvatartas(){
-        JSONArray korcsolyak = XmlReader.read(System.getProperty("user.dir") +
+        JSONArray nyitvatartasok = XmlReader.read(System.getProperty("user.dir") +
                 "\\IdeaProjects\\korcsolyapalya\\src\\main\\resources\\nyitvatartas.xml");
 
-        return Response.ok(korcsolyak.toString()).build();
+        return Response.ok(NyitvatartasView.showNyitvatartasok(nyitvatartasok)).build();
     }
 
     @POST
@@ -64,6 +58,7 @@ public class RequestController {
         }
         return Response.ok("Rossz formában adta meg a request body tartalmát vagy nem létező korcsolyatípust adott meg!").build();
     }
+
     @POST
     @Path("palyaFoglalas")
     public Response foglalas(String igeny) {
