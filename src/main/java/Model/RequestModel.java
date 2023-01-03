@@ -173,4 +173,29 @@ public class RequestModel {
         }
     }
 
+    public static String getFoglalasok(){
+        String result = "";
+        JSONArray foglalasok = XmlReader.read(System.getProperty("user.dir") +
+                "\\IdeaProjects\\korcsolyapalya\\src\\main\\resources\\palyafoglalas.xml");
+
+        for(int i = 0; i < foglalasok.length(); i++){
+            JSONObject fogl = foglalasok.getJSONObject(i);
+            Foglalas foglalas = new Foglalas(Integer.valueOf(fogl.getString("id")), fogl.getString("vezeteknev"),
+                    fogl.getString("keresztnev"), fogl.getString("email"), LocalDate.parse(fogl.getString("datum")),
+                    LocalTime.parse(fogl.getString("kezdet")), LocalTime.parse(fogl.getString("veg")));
+
+
+            if(foglalas.getDatum().isAfter(LocalDate.now().minusDays(1))){
+                result += foglalas.toString() + "\n";
+            }
+        }
+
+        if(result.equals("")){
+            return "Nincsenek aktív pályafoglalások!";
+        }
+        else{
+            return "Az alábbi aktív pályafoglalások vannak a rendszerben:\n\n" + result;
+        }
+    }
+
 }
