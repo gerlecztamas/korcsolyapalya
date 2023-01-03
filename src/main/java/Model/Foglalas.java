@@ -2,6 +2,7 @@ package Model;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 
 
 public class Foglalas extends Tranzakcio {
@@ -36,5 +37,15 @@ public class Foglalas extends Tranzakcio {
         XmlWriter<Foglalas> t = new XmlWriter<>();
         t.writer(this, System.getProperty("user.dir") +
                 "\\IdeaProjects\\korcsolyapalya\\src\\main\\resources\\palyafoglalas.xml");
+    }
+
+    @Override
+    public String toString(){
+        DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("yyyy.MM.dd");
+        String foglalas = FORMATTER.format(this.datum) + "-én/-án, ";
+        foglalas += this.kezdet + "-tól/-től ";
+        foglalas += this.veg + "-ig ";
+        foglalas += this.getVezeteknev() + " " + this.getKeresztnev() + " néven!\n";
+        return foglalas;
     }
 }

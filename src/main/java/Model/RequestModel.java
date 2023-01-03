@@ -117,7 +117,7 @@ public class RequestModel {
                 LocalTime.parse(igeny.getString("veg")));
         foglalas.writer();
 
-        result = "Sikeres foglalás!"; //IDE KÉNE EGY SZEBB KIIRATÁS TOMI!!!!
+        result = "Sikeresen lefoglalta a pályát " + foglalas; //IDE KÉNE EGY SZEBB KIIRATÁS TOMI!!!!
 
         return result;
     }
@@ -132,7 +132,6 @@ public class RequestModel {
             for (KorcsolyaTipusEnum tipusEnum : KorcsolyaTipusEnum.values()) {
                 String tipusString = tipusEnum.name();
                 tipusLista.add(tipusString);
-                System.out.println(tipusString.getClass().getName() + "hahooo" + tipusString);
             }
             if (!tipusLista.contains(tipus)) {
                 return false;
