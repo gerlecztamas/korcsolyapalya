@@ -18,7 +18,7 @@ public class RequestModel {
                 "\\IdeaProjects\\korcsolyapalya\\src\\main\\resources\\korcsolyakolcsonzes.xml");
 
         for(int i = 0; i < korcsolyak.length(); i++){
-            JSONObject korcsolya = korcsolyak.getJSONObject(i); //a listában lévő korcsolya az összes korcsolya közül
+            JSONObject korcsolya = korcsolyak.getJSONObject(i);
             try{
                 if(korcsolya.getString("meret").equals(igeny.getString("meret")) &&
                         korcsolya.getString("tipus").equals(igeny.getString("tipus"))){
@@ -83,7 +83,6 @@ public class RequestModel {
         JSONArray foglalasok = XmlReader.read(System.getProperty("user.dir") +
                 "\\IdeaProjects\\korcsolyapalya\\src\\main\\resources\\palyafoglalas.xml");
 
-        //csak végig kell menni a létező foglalásokon és megnézni, hogy bármelyikkel egyezik-e!!!
         try {
             for (int i = 0; i < foglalasok.length(); i++) {
                 JSONObject foglalas = foglalasok.getJSONObject(i);
@@ -128,7 +127,7 @@ public class RequestModel {
             JSONArray korcsolyak = XmlReader.read(System.getProperty("user.dir") +
                     "\\IdeaProjects\\korcsolyapalya\\src\\main\\resources\\korcsolyak.xml");
             String tipus = korcsolya.getString("tipus");
-            ArrayList<String> tipusLista = new ArrayList<String>();
+            ArrayList<String> tipusLista = new ArrayList<>();
             for (KorcsolyaTipusEnum tipusEnum : KorcsolyaTipusEnum.values()) {
                 String tipusString = tipusEnum.name();
                 tipusLista.add(tipusString);
@@ -136,7 +135,9 @@ public class RequestModel {
             if (!tipusLista.contains(tipus)) {
                 return false;
             }
-            Korcsolya ujKorcsolya = new Korcsolya(korcsolyak.length(), KorcsolyaTipusEnum.valueOf(korcsolya.getString("tipus")), korcsolya.getInt("meret"), korcsolya.getString("szin"));
+            Korcsolya ujKorcsolya = new Korcsolya(korcsolyak.length(),
+                    KorcsolyaTipusEnum.valueOf(korcsolya.getString("tipus")), Integer.valueOf(korcsolya.getString("meret")),
+                    korcsolya.getString("szin"));
             ujKorcsolya.writer();
         }
         catch (Exception ex){

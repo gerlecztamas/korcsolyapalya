@@ -14,7 +14,6 @@ import javax.xml.transform.stream.StreamSource;
 import java.io.File;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
-import Model.GetterFunctionName;
 
 public class XmlWriter <T>{
     public void writer(T entity, String path){
@@ -73,6 +72,27 @@ public class XmlWriter <T>{
 
         }catch (Exception e){
             System.out.println(e.getMessage());
+        }
+    }
+
+    private void writeAttributes(Class clazz, T entity, Document xml, Element elem) {
+        try {
+            Field[] tulajdonsagok = clazz.getDeclaredFields();
+            for (Field tulajdonsag : tulajdonsagok) {
+                if (tulajdonsag.getAnnotation(GetterFunctionName.class) != null) {
+                    String gfn = tulajdonsag.getAnnotation(GetterFunctionName.class).name();
+                    Method gm = clazz.getMethod(gfn);
+                    String ertek = gm.invoke(entity).toString();
+                    String valtozoNev = tulajdonsag.getName();
+
+                    Element elemek = xml.createElement(valtozoNev);
+                    elemek.setTextContent(ertek);
+                    elem.appendChild(elemek);
+                }
+            }
+        }
+        catch(Exception ex){
+            System.out.println(ex.getMessage());
         }
     }
 }

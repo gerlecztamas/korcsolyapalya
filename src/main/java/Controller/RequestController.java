@@ -64,7 +64,6 @@ public class RequestController {
     public Response foglalas(String igeny) {
         JSONObject igenyJson = new JSONObject(igeny);
 
-
         return Response.ok(RequestModel.foglalas(igenyJson)).build();
     }
 

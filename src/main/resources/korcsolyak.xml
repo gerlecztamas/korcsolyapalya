@@ -132,4 +132,10 @@
         <meret>41</meret>
         <szin>fehér</szin>
     </elem>
+    <elem>
+        <id>23</id>
+        <tipus>HockeyKorcsolya</tipus>
+        <meret>39</meret>
+        <szin>fekete</szin>
+    </elem>
 </korcsolyak>

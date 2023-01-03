@@ -32,4 +32,12 @@
         <korcsolyaId>13</korcsolyaId>
         <datum>2023-01-14</datum>
     </elem>
+    <elem>
+        <id>4</id>
+        <vezeteknev>Jóska</vezeteknev>
+        <keresztnev>Kiss</keresztnev>
+        <email>kissjoska@gmail.com</email>
+        <korcsolyaId>6</korcsolyaId>
+        <datum>2023-01-14</datum>
+    </elem>
 </korcsolyakolcsonzes>
