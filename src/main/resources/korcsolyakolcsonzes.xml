@@ -32,4 +32,36 @@
         <korcsolyaId>13</korcsolyaId>
         <datum>2023-01-14</datum>
     </elem>
+    <elem>
+        <id>4</id>
+        <vezeteknev>Jóska</vezeteknev>
+        <keresztnev>Kiss</keresztnev>
+        <email>kissjoska@gmail.com</email>
+        <korcsolyaId>6</korcsolyaId>
+        <datum>2023-01-14</datum>
+    </elem>
+    <elem>
+        <id>5</id>
+        <vezeteknev>Jóska</vezeteknev>
+        <keresztnev>Kiss</keresztnev>
+        <email>kissjoska@gmail.com</email>
+        <korcsolyaId>15</korcsolyaId>
+        <datum>2023-01-14</datum>
+    </elem>
+    <elem>
+        <korcsolyaId>14</korcsolyaId>
+        <datum>2023-01-03</datum>
+        <id>6</id>
+        <vezeteknev>Jóska</vezeteknev>
+        <keresztnev>Kiss</keresztnev>
+        <email>kissjoska@gmail.com</email>
+    </elem>
+    <elem>
+        <korcsolyaId>14</korcsolyaId>
+        <datum>2023-01-02</datum>
+        <id>7</id>
+        <vezeteknev>Jóska</vezeteknev>
+        <keresztnev>Kiss</keresztnev>
+        <email>kissjoska@gmail.com</email>
+    </elem>
 </korcsolyakolcsonzes>

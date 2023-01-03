@@ -3,7 +3,7 @@ package Model;
 import Model.KorcsolyaTipusEnum;
 import org.json.JSONObject;
 
-public class Korcsolya implements ToJsonInterface {
+public class Korcsolya implements WriterInterface {
     @GetterFunctionName(name="getId")
     private Integer id;
     @GetterFunctionName(name="getTipus")
@@ -12,9 +12,6 @@ public class Korcsolya implements ToJsonInterface {
     private Integer meret;
     @GetterFunctionName(name="getSzin")
     private String szin;
-
-    public Korcsolya() {
-    }
 
     public Korcsolya(Integer id, KorcsolyaTipusEnum tipus, Integer meret, String szin) {
         this.id = id;
@@ -46,18 +43,9 @@ public class Korcsolya implements ToJsonInterface {
         korcsolya += "\nSzíne: " + this.szin;
         return korcsolya;
     }
+
     @Override
-    public JSONObject toJson() {
-        JSONObject korcsolyaJSON = new JSONObject();
-        korcsolyaJSON.put("id", this.id);
-        korcsolyaJSON.put("tipus", this.tipus.toString());
-        korcsolyaJSON.put("meret", this.meret);
-        korcsolyaJSON.put("szin", this.szin);
-
-        return korcsolyaJSON;
-    }
-
-    public void writer(){
+    public void writer() {
         XmlWriter<Korcsolya> t = new XmlWriter<>();
         t.writer(this, System.getProperty("user.dir") +
                 "\\IdeaProjects\\korcsolyapalya\\src\\main\\resources\\korcsolyak.xml");

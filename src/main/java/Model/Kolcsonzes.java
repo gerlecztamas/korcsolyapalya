@@ -1,8 +1,12 @@
 package Model;
 
-import java.time.LocalDate;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
-public class Kolcsonzes extends Tranzakcio {
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
+public class Kolcsonzes extends Tranzakcio implements WriterInterface{
 
     @GetterFunctionName(name="getKorcsolya")
     private Integer korcsolyaId;
@@ -23,7 +27,27 @@ public class Kolcsonzes extends Tranzakcio {
         return datum;
     }
 
-    public void writer(){
+    @Override
+    public String toString(){
+        DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("yyyy.MM.dd.");
+        String kolcsonzes = "Kölcsönző neve: " + this.getVezeteknev() + " " + this.getKeresztnev() + "\n";
+        kolcsonzes += "Email címe: " + this.getEmail() + "\n";
+        kolcsonzes += "Kölcsönzés dátuma: " + FORMATTER.format(this.datum) + "\n";
+        kolcsonzes += "Kölcsönzött korcsolya:\n\n";
+        JSONArray korcsolyak = XmlReader.read(System.getProperty("user.dir") +
+                "\\IdeaProjects\\korcsolyapalya\\src\\main\\resources\\korcsolyak.xml");
+        for(int i = 0; i < korcsolyak.length(); i++){
+            JSONObject korcsolya = korcsolyak.getJSONObject(i);
+            if(korcsolya.getInt("id") == this.korcsolyaId){
+                Korcsolya ujKorcsolya = new Korcsolya(korcsolya.getInt("id"), KorcsolyaTipusEnum.valueOf(korcsolya.getString("tipus")), korcsolya.getInt("meret"), korcsolya.getString("szin"));
+                kolcsonzes += ujKorcsolya + "\n\n\n";
+            }
+        }
+        return kolcsonzes;
+    }
+
+    @Override
+    public void writer() {
         XmlWriter<Kolcsonzes> t = new XmlWriter<Kolcsonzes>();
         t.writer(this, System.getProperty("user.dir") +
                 "\\IdeaProjects\\korcsolyapalya\\src\\main\\resources\\korcsolyakolcsonzes.xml");

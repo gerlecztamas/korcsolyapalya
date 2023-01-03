@@ -1,7 +1,9 @@
 package Controller;
 
 import Model.*;
+import View.JegyView;
 import View.KorcsolyaView;
+import View.NyitvatartasView;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
@@ -16,10 +18,10 @@ public class RequestController {
     @Path ("jegyarak")
     public Response jegyarak(){
 
-        return Response.ok(XmlReader.read(System.getProperty("user.dir") +
-                "\\IdeaProjects\\korcsolyapalya\\src\\main\\resources\\jegy.xml").toString()).build();
+        JSONArray jegyek = XmlReader.read(System.getProperty("user.dir") +
+                "\\IdeaProjects\\korcsolyapalya\\src\\main\\resources\\jegy.xml");
+        return Response.ok(JegyView.showJegyek(jegyek)).build();
     }
-
 
     @GET
     @Path ("korcsolyak")
@@ -33,10 +35,24 @@ public class RequestController {
     @GET
     @Path ("nyitvatartas")
     public Response getNyitvatartas(){
-        JSONArray korcsolyak = XmlReader.read(System.getProperty("user.dir") +
+        JSONArray nyitvatartas = XmlReader.read(System.getProperty("user.dir") +
                 "\\IdeaProjects\\korcsolyapalya\\src\\main\\resources\\nyitvatartas.xml");
 
-        return Response.ok(korcsolyak.toString()).build();
+        return Response.ok(NyitvatartasView.showNyitvatartasok(nyitvatartas)).build();
+    }
+
+    @GET
+    @Path ("kolcsonzesek")
+    public Response getKolcsonzesek(){
+
+        return Response.ok(RequestModel.getKolcsonzesek()).build();
+    }
+
+    @GET
+    @Path ("foglalasok")
+    public Response getFoglalasok(){
+
+        return Response.ok(RequestModel.getFoglalasok()).build();
     }
 
     @POST
@@ -47,6 +63,16 @@ public class RequestController {
         return Response.ok(RequestModel.kolcsonzes(igenyJson)).build();
     }
 
+    @POST
+    @Path("korcsolyaFelvetel")
+    public Response felvetel(String json){
+        JSONObject korcsolya = new JSONObject(json);
+        Boolean result = RequestModel.addKorcsolya(korcsolya);
+        if(result){
+            return Response.ok("A korcsolyát hozzáadtuk az adatbázishoz!").build();
+        }
+        return Response.ok("Rossz formában adta meg a request body tartalmát vagy nem létező korcsolyatípust adott meg!").build();
+    }
     @POST
     @Path("palyaFoglalas")
     public Response foglalas(String igeny) {
