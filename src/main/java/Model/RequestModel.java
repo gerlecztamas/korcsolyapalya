@@ -18,7 +18,7 @@ public class RequestModel {
                 "\\IdeaProjects\\korcsolyapalya\\src\\main\\resources\\korcsolyakolcsonzes.xml");
 
         for(int i = 0; i < korcsolyak.length(); i++){
-            JSONObject korcsolya = korcsolyak.getJSONObject(i); //a listában lévő korcsolya az összes korcsolya közül
+            JSONObject korcsolya = korcsolyak.getJSONObject(i);
             try{
                 if(korcsolya.getString("meret").equals(igeny.getString("meret")) &&
                         korcsolya.getString("tipus").equals(igeny.getString("tipus"))){
@@ -83,7 +83,6 @@ public class RequestModel {
         JSONArray foglalasok = XmlReader.read(System.getProperty("user.dir") +
                 "\\IdeaProjects\\korcsolyapalya\\src\\main\\resources\\palyafoglalas.xml");
 
-        //csak végig kell menni a létező foglalásokon és megnézni, hogy bármelyikkel egyezik-e!!!
         try {
             for (int i = 0; i < foglalasok.length(); i++) {
                 JSONObject foglalas = foglalasok.getJSONObject(i);

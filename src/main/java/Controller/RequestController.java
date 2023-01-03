@@ -64,11 +64,10 @@ public class RequestController {
         }
         return Response.ok("Rossz formában adta meg a request body tartalmát vagy nem létező korcsolyatípust adott meg!").build();
     }
-
+    @POST
     @Path("palyaFoglalas")
     public Response foglalas(String igeny) {
         JSONObject igenyJson = new JSONObject(igeny);
-
 
         return Response.ok(RequestModel.foglalas(igenyJson)).build();
     }
