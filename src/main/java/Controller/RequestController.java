@@ -55,16 +55,4 @@ public class RequestController {
         return Response.ok(RequestModel.foglalas(igenyJson)).build();
     }
 
-    /*@POST
-    @Path("korcsolyaFelvetel")
-    public Response felvetel(String json){
-        JSONObject korcsolya = new JSONObject(json);
-        Boolean result = RequestModel.addKorcsolya(korcsolya);
-        if(result){
-            return Response.ok("A korcsolyát hozzáadtuk az adatbázishoz!").build();
-        }
-        return Response.ok("Rossz formában adta meg a request body tartalmát vagy nem létező korcsolyatípust adott meg!").build();
-    }*/
-
-
 }

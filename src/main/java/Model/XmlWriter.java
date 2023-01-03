@@ -64,7 +64,6 @@ public class XmlWriter <T>{
                     "\\IdeaProjects\\korcsolyapalya\\src\\main\\resources\\prettyprint.xsl")));
             t.setOutputProperty(OutputKeys.STANDALONE, "yes");
             t.setOutputProperty(OutputKeys.INDENT, "yes");
-            //t.setOutputProperty("{http://xml.apache.org/xslt%7Dindent-amount", "1");
 
 
             DOMSource s = new DOMSource(xml);

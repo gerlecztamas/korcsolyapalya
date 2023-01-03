@@ -33,7 +33,7 @@ public class Foglalas extends Tranzakcio {
     }
 
     public void writer(){
-        XmlWriter<Foglalas> t = new XmlWriter<Foglalas>();
+        XmlWriter<Foglalas> t = new XmlWriter<>();
         t.writer(this, System.getProperty("user.dir") +
                 "\\IdeaProjects\\korcsolyapalya\\src\\main\\resources\\palyafoglalas.xml");
     }
