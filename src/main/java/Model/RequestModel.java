@@ -128,7 +128,7 @@ public class RequestModel {
             JSONArray korcsolyak = XmlReader.read(System.getProperty("user.dir") +
                     "\\IdeaProjects\\korcsolyapalya\\src\\main\\resources\\korcsolyak.xml");
             String tipus = korcsolya.getString("tipus");
-            ArrayList<String> tipusLista = new ArrayList<String>();
+            ArrayList<String> tipusLista = new ArrayList<>();
             for (KorcsolyaTipusEnum tipusEnum : KorcsolyaTipusEnum.values()) {
                 String tipusString = tipusEnum.name();
                 tipusLista.add(tipusString);
@@ -137,7 +137,9 @@ public class RequestModel {
             if (!tipusLista.contains(tipus)) {
                 return false;
             }
-            Korcsolya ujKorcsolya = new Korcsolya(korcsolyak.length(), KorcsolyaTipusEnum.valueOf(korcsolya.getString("tipus")), korcsolya.getInt("meret"), korcsolya.getString("szin"));
+            Korcsolya ujKorcsolya = new Korcsolya(korcsolyak.length(),
+                    KorcsolyaTipusEnum.valueOf(korcsolya.getString("tipus")), Integer.valueOf(korcsolya.getString("meret")),
+                    korcsolya.getString("szin"));
             ujKorcsolya.writer();
         }
         catch (Exception ex){
