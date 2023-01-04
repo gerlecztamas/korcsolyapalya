@@ -12,6 +12,10 @@ public class RequestModel {
     public static String kolcsonzes(JSONObject igeny){
         String result = "Nincs az igényeknek megfelelő korcsolya!";
 
+        if(igeny.getString("tipus").equals("") || igeny.getString("meret").equals("") || igeny.getString("vezeteknev").equals("") || igeny.getString("keresztnev").equals("") || igeny.getString("email").equals("") || igeny.getString("datum").equals("")){
+            return "Minden adatmezőt ki kell töltenie!";
+        }
+
         JSONArray korcsolyak = XmlReader.read(System.getProperty("user.dir") +
                 "\\IdeaProjects\\korcsolyapalya\\src\\main\\resources\\korcsolyak.xml");
         JSONArray kolcsonzottek = XmlReader.read(System.getProperty("user.dir") +
@@ -76,6 +80,10 @@ public class RequestModel {
     public static String foglalas(JSONObject igeny){
         String result;
 
+        if(igeny.getString("kezdet").equals("") || igeny.getString("veg").equals("") || igeny.getString("vezeteknev").equals("") || igeny.getString("keresztnev").equals("") || igeny.getString("email").equals("") || igeny.getString("datum").equals("")){
+            return "Minden adatmezőt ki kell töltenie!";
+        }
+
         if(LocalTime.parse(igeny.getString("veg")).isBefore(LocalTime.parse(igeny.getString("kezdet")))){
             return "A pályafoglalás befejezése nem lehet a kezdete előtti időpont!";
         }
@@ -123,6 +131,10 @@ public class RequestModel {
 
 
     public static Boolean addKorcsolya(JSONObject korcsolya){
+        if(korcsolya.getString("tipus").equals("") || korcsolya.getString("meret").equals("") || korcsolya.getString("szin").equals("")){
+            return false;
+        }
+
         try {
             JSONArray korcsolyak = XmlReader.read(System.getProperty("user.dir") +
                     "\\IdeaProjects\\korcsolyapalya\\src\\main\\resources\\korcsolyak.xml");
