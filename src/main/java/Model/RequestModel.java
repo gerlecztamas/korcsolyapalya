@@ -124,15 +124,16 @@ public class RequestModel {
                 LocalTime.parse(igeny.getString("veg")));
         foglalas.writer();
 
-        result = "Sikeresen lefoglalta a pályát " + foglalas + "!\n"; //IDE KÉNE EGY SZEBB KIIRATÁS TOMI!!!!
+        result = "Sikeresen lefoglalta a pályát " + foglalas + "!\n";
 
         return result;
     }
 
+    public static String addKorcsolya(JSONObject korcsolya){
+        String result;
 
-    public static Boolean addKorcsolya(JSONObject korcsolya){
         if(korcsolya.getString("tipus").equals("") || korcsolya.getString("meret").equals("") || korcsolya.getString("szin").equals("")){
-            return false;
+            return "Minden adatmezőt ki kell töltenie!";
         }
 
         try {
@@ -145,19 +146,21 @@ public class RequestModel {
                 tipusLista.add(tipusString);
             }
             if (!tipusLista.contains(tipus)) {
-                return false;
+                return "Nem létező korcsolyatípust adott meg";
             }
             Korcsolya ujKorcsolya = new Korcsolya(korcsolyak.length(),
                     KorcsolyaTipusEnum.valueOf(korcsolya.getString("tipus")), Integer.valueOf(korcsolya.getString("meret")),
                     korcsolya.getString("szin"));
             ujKorcsolya.writer();
+            result = "A következő korcsolyát sikeresen hozzáadtuk a rendszerhez:\n\n" + ujKorcsolya;
         }
         catch (Exception ex){
             System.out.println(ex.getMessage());
-            return false;
+            return "Hibás bemenő paraméterek!";
         }
 
-        return true;
+        return result;
+
     }
 
     public static String getKolcsonzesek(){
