@@ -88,6 +88,14 @@ public class RequestModel {
             return "A pályafoglalás befejezése nem lehet a kezdete előtti időpont!";
         }
 
+        if(LocalTime.parse("23:00").isBefore(LocalTime.parse(igeny.getString("veg")))){
+            return "23:00-nál tovább nem tart nyitva a pálya!";
+        }
+
+        if(LocalTime.parse(igeny.getString("kezdet")).isBefore(LocalTime.parse("06:00"))){
+            return "06:00-nál előbb nem tart nyitva a pálya!";
+        }
+
         JSONArray foglalasok = XmlReader.read(System.getProperty("user.dir") +
                 "\\IdeaProjects\\korcsolyapalya\\src\\main\\resources\\palyafoglalas.xml");
 
