@@ -38,8 +38,8 @@ public class Kolcsonzes extends Tranzakcio implements WriterInterface{
                 "\\IdeaProjects\\korcsolyapalya\\src\\main\\resources\\korcsolyak.xml");
         for(int i = 0; i < korcsolyak.length(); i++){
             JSONObject korcsolya = korcsolyak.getJSONObject(i);
-            if(korcsolya.getInt("id") == this.korcsolyaId){
-                Korcsolya ujKorcsolya = new Korcsolya(korcsolya.getInt("id"), KorcsolyaTipusEnum.valueOf(korcsolya.getString("tipus")), korcsolya.getInt("meret"), korcsolya.getString("szin"));
+            if(Integer.valueOf(korcsolya.getString("id")) == this.korcsolyaId){
+                Korcsolya ujKorcsolya = new Korcsolya(Integer.valueOf(korcsolya.getString("id")), KorcsolyaTipusEnum.valueOf(korcsolya.getString("tipus")), Integer.valueOf(korcsolya.getString("meret")), korcsolya.getString("szin"));
                 kolcsonzes += ujKorcsolya + "\n\n\n";
             }
         }

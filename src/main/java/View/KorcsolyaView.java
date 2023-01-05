@@ -22,7 +22,7 @@ public class KorcsolyaView {
         String korcsolyaToString = "";
 
         korcsolyaToString += "Típus: " + korcsolya.getString("tipus") + "\n";
-        korcsolyaToString += "Méret: " + korcsolya.getInt("meret") + "\n";
+        korcsolyaToString += "Méret: " + korcsolya.getString("meret") + "\n";
         korcsolyaToString += "Szín: " + korcsolya.getString("szin") + "\n\n";
 
         return korcsolyaToString;
