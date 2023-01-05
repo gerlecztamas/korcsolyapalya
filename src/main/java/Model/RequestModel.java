@@ -62,8 +62,8 @@ public class RequestModel {
 
     public static String makeKolcsonzes(JSONObject korcsolya, JSONObject igeny, JSONArray kolcsonzottek){
         String result;
-        Korcsolya kolcsonzott = new Korcsolya(korcsolya.getInt("id"),
-                KorcsolyaTipusEnum.valueOf(korcsolya.getString("tipus")), korcsolya.getInt("meret"),
+        Korcsolya kolcsonzott = new Korcsolya(Integer.valueOf(korcsolya.getString("id")),
+                KorcsolyaTipusEnum.valueOf(korcsolya.getString("tipus")), Integer.valueOf(korcsolya.getString("meret")),
                 korcsolya.getString("szin"));
 
         Kolcsonzes kolcsonzes = new Kolcsonzes(kolcsonzottek.length(), igeny.getString("keresztnev"),
@@ -176,7 +176,7 @@ public class RequestModel {
 
 
             if(kolcsonzes.getDatum().isAfter(LocalDate.now().minusDays(1))){
-                result += kolcsonzes.toString() + "\n";
+                result += kolcsonzes + "\n";
             }
         }
 
@@ -201,7 +201,7 @@ public class RequestModel {
 
 
             if(foglalas.getDatum().isAfter(LocalDate.now().minusDays(1))){
-                result += foglalas.toString() + "\n";
+                result += foglalas + "\n";
             }
         }
 

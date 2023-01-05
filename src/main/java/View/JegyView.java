@@ -22,7 +22,7 @@ public class JegyView {
     public static String showJegy(JSONObject jegy){
         String jegyToString = "";
         jegyToString += "Típus: " + jegy.getString("nev") + "\n";
-        jegyToString += "Ár: " + jegy.getInt("ar") + " Ft\n";
+        jegyToString += "Ár: " + jegy.getString("ar") + " Ft\n";
         if (jegy.length() == 3) {
             jegyToString += "Megjegyzés: " + jegy.getString("megjegyzes") + "\n\n";
             return jegyToString;
