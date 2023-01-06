@@ -138,4 +138,10 @@
         <meret>39</meret>
         <szin>fekete</szin>
     </elem>
+    <elem>
+        <id>23</id>
+        <tipus>Mukorcsolya</tipus>
+        <meret>45</meret>
+        <szin>rózsaszín</szin>
+    </elem>
 </korcsolyak>

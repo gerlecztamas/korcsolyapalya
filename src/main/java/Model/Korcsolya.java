@@ -42,10 +42,6 @@ public class Korcsolya implements WriterInterface {
         return szin;
     }
 
-    public void setSzin(String szin) {
-        this.szin = szin;
-    }
-
     @Override
     public String toString(){
         String korcsolya = "Korcsolya típusa: " + this.tipus;

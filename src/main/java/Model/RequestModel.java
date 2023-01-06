@@ -16,6 +16,10 @@ public class RequestModel {
             return "Minden adatmezőt ki kell töltenie!";
         }
 
+        if(LocalDate.parse(igeny.getString("datum")).isBefore(LocalDate.now().plusDays(1))){
+            return "Minimum egy nappal előre szükséges a korcsolya kölcsönzési igényeket leadni!";
+        }
+
         JSONArray korcsolyak = XmlReader.read(System.getProperty("user.dir") +
                 "\\IdeaProjects\\korcsolyapalya\\src\\main\\resources\\korcsolyak.xml");
         JSONArray kolcsonzottek = XmlReader.read(System.getProperty("user.dir") +
@@ -94,6 +98,10 @@ public class RequestModel {
 
         if(LocalTime.parse(igeny.getString("kezdet")).isBefore(LocalTime.parse("06:00"))){
             return "06:00-nál előbb nem tart nyitva a pálya!";
+        }
+
+        if(LocalDate.parse(igeny.getString("datum")).isBefore(LocalDate.now().plusDays(1))){
+            return "Minimum egy nappal előre szükséges a pályafoglalási igényeket leadni!";
         }
 
         JSONArray foglalasok = XmlReader.read(System.getProperty("user.dir") +
