@@ -28,12 +28,23 @@ public class Tranzakcio {
         return vezeteknev;
     }
 
+    public void setVezeteknev(String vezeteknev) {
+        this.vezeteknev = vezeteknev;
+    }
+
     public String getKeresztnev() {
         return keresztnev;
+    }
+
+    public void setKeresztnev(String keresztnev) {
+        this.keresztnev = keresztnev;
     }
 
     public String getEmail() {
         return email;
     }
 
+    public void setEmail(String email) {
+        this.email = email;
+    }
 }

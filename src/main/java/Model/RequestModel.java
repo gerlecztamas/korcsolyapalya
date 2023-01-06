@@ -178,7 +178,7 @@ public class RequestModel {
 
         for(int i = 0; i < kolcsonzesek.length(); i++){
             JSONObject kolcson = kolcsonzesek.getJSONObject(i);
-            Kolcsonzes kolcsonzes = new Kolcsonzes(Integer.valueOf(kolcson.getString("id")), kolcson.getString("keresztnev"),
+            Kolcsonzes kolcsonzes = new Kolcsonzes(Integer.parseInt(kolcson.getString("id")), kolcson.getString("keresztnev"),
                     kolcson.getString("vezeteknev"), kolcson.getString("email"),
                     Integer.valueOf(kolcson.getString("korcsolyaId")), LocalDate.parse(kolcson.getString("datum")));
 
@@ -203,7 +203,7 @@ public class RequestModel {
 
         for(int i = 0; i < foglalasok.length(); i++){
             JSONObject fogl = foglalasok.getJSONObject(i);
-            Foglalas foglalas = new Foglalas(Integer.valueOf(fogl.getString("id")), fogl.getString("vezeteknev"),
+            Foglalas foglalas = new Foglalas(Integer.parseInt(fogl.getString("id")), fogl.getString("vezeteknev"),
                     fogl.getString("keresztnev"), fogl.getString("email"), LocalDate.parse(fogl.getString("datum")),
                     LocalTime.parse(fogl.getString("kezdet")), LocalTime.parse(fogl.getString("veg")));
 

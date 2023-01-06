@@ -9,9 +9,9 @@ import java.time.format.DateTimeFormatter;
 public class Kolcsonzes extends Tranzakcio implements WriterInterface{
 
     @GetterFunctionName(name="getKorcsolya")
-    private Integer korcsolyaId;
+    private final Integer korcsolyaId;
     @GetterFunctionName(name="getDatum")
-    private LocalDate datum;
+    private final LocalDate datum;
 
     public Kolcsonzes(int id, String vezeteknev, String keresztnev, String email, Integer korcsolyaId, LocalDate datum) {
         super(id, vezeteknev, keresztnev, email);
@@ -38,7 +38,7 @@ public class Kolcsonzes extends Tranzakcio implements WriterInterface{
                 "\\IdeaProjects\\korcsolyapalya\\src\\main\\resources\\korcsolyak.xml");
         for(int i = 0; i < korcsolyak.length(); i++){
             JSONObject korcsolya = korcsolyak.getJSONObject(i);
-            if(Integer.valueOf(korcsolya.getString("id")) == this.korcsolyaId){
+            if(Integer.valueOf(korcsolya.getString("id")).equals(this.korcsolyaId)){
                 Korcsolya ujKorcsolya = new Korcsolya(Integer.valueOf(korcsolya.getString("id")), KorcsolyaTipusEnum.valueOf(korcsolya.getString("tipus")), Integer.valueOf(korcsolya.getString("meret")), korcsolya.getString("szin"));
                 kolcsonzes += ujKorcsolya + "\n\n\n";
             }
@@ -48,7 +48,7 @@ public class Kolcsonzes extends Tranzakcio implements WriterInterface{
 
     @Override
     public void writer() {
-        XmlWriter<Kolcsonzes> t = new XmlWriter<Kolcsonzes>();
+        XmlWriter<Kolcsonzes> t = new XmlWriter<>();
         t.writer(this, System.getProperty("user.dir") +
                 "\\IdeaProjects\\korcsolyapalya\\src\\main\\resources\\korcsolyakolcsonzes.xml");
     }

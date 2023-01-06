@@ -1,11 +1,9 @@
 package Model;
 
-import Model.KorcsolyaTipusEnum;
-import org.json.JSONObject;
 
 public class Korcsolya implements WriterInterface {
     @GetterFunctionName(name="getId")
-    private Integer id;
+    private final Integer id;
     @GetterFunctionName(name="getTipus")
     private KorcsolyaTipusEnum tipus;
     @GetterFunctionName(name="getMeret")
@@ -28,12 +26,24 @@ public class Korcsolya implements WriterInterface {
         return tipus;
     }
 
+    public void setTipus(KorcsolyaTipusEnum tipus) {
+        this.tipus = tipus;
+    }
+
     public Integer getMeret() {
         return meret;
     }
 
+    public void setMeret(Integer meret) {
+        this.meret = meret;
+    }
+
     public String getSzin() {
         return szin;
+    }
+
+    public void setSzin(String szin) {
+        this.szin = szin;
     }
 
     @Override
